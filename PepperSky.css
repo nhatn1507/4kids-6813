@@ -82,3 +82,16 @@ body {
 #myUL li a:hover:not(.header) {
     background-color: #eee; /* Add a hover effect to all links, except for headers */
 }
+
+
+.fa.fa-star, .fa.fa-star-half-o, .fa.fa-star-o  {
+    color: orange;
+
+}
+
+/* ====== media ====== */
+.media {margin:5px;}
+.media, .bd {overflow:hidden; _overflow:visible; zoom:1;}
+.media .img {float:left; margin-right: 10px;}
+.media .img img{display:block;}
+.media .imgExt{float:right; margin-left: 10px;}
