@@ -34,6 +34,55 @@ Static HTML page for Pepper Sky
  *
  */
 
+ /*
+  * Chooses the tab and shows the content
+  *
+  */
+
+
+ function openContent(name, elmnt, color) {
+     // Hide all elements with class="tabcontent" by default */
+     var i, tabcontent, tablinks;
+     tabcontent = document.getElementsByClassName("tabcontent");
+     for (i = 0; i < tabcontent.length; i++) {
+         tabcontent[i].style.display = "none";
+     }
+
+     // Remove the background color of all tablinks/buttons
+     tablinks = document.getElementsByClassName("tablink");
+     for (i = 0; i < tablinks.length; i++) {
+         tablinks[i].style.backgroundColor = "";
+     }
+
+     // Show the specific tab content
+     document.getElementById(name).style.display = "block";
+
+     // Add the specific color to the button used to open the tab content
+     elmnt.style.backgroundColor = color;
+ }
+
+ // Get the element with id="defaultOpen" and click on it
+ document.getElementById("defaultOpen").click();
+
+
+ function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
 
 
 
@@ -44,35 +93,40 @@ Static HTML page for Pepper Sky
 </script>
 
 <div class = "Pepper Sky" id = "PepperSky" >
-  <h3> Pepper Sky </h3>
+  <a href="google.com"><span style="float: left; margin-left: 10px;"> Map </span></a>
+  <span id = "PepperSky"> <h3> Pepper Sky </h3></span>
 </div>
 
-<div class="tabs">
-    <ul class="tab-links">
-        <li class="active"><a href="#Overview">Overview</a></li>
-        <li><a href="#Review">Review</a></li>
-        <li><a href="#Menu">Menu</a></li>
-    </ul>
-
-    <div class="tab-content">
-        <div id="tab1" class="tab active">
-            <p>Rating: &#9734; &#9734; &#9734;</p>
-            <p>Hours: 7AM - 9PM</p>
-            <p>Address: 555 Massachusetts Avenue, Cambridge, MA 02139 </p>
-            <p>Price: &#36; &#36; </p>
-            <p>Description: We serve great Thai food! Our specialty is pad thai, so please come and try out our noodles</p>
-        </div>
-
-        <div id="tab2" class="tab">
-            <p>Review content goes here</p>
-            <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis. In hac habitasse platea dictumst. Ut euismod tempus hendrerit. Morbi ut adipiscing nisi. Etiam rutrum sodales gravida! Aliquam tellus orci, iaculis vel.</p>
-        </div>
-
-        <div id="tab3" class="tab">
-            <p>Menu content goes here</p>
-            <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum ri.</p>
-        </div>
-
-
-    </div>
+<div id="Overview" class="tabcontent">
+  <h3>Overview</h3>
+  <p>Rating: &#9734; &#9734; &#9734;</p>
+  <p>Hours: 7AM - 9PM</p>
+  <p>Address: 555 Massachusetts Avenue, Cambridge, MA 02139 </p>
+  <p>Price: &#36; &#36; </p>
+  <p>Description: We serve great Thai food! Our specialty is pad thai, so please come and try out our noodles</p>
 </div>
+
+<div id="Review" class="tabcontent">
+  <h3>Review</h3>
+  <p>Review goes here</p>
+</div>
+
+<div id="Menu" class="tabcontent">
+  <h3>Menu</h3>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Menu search">
+  <ul id="myUL">
+
+  <li><a href="#">Pad Thai $8.95</a></li>
+  <li><a href="#">Potato Puffs $5.95</a></li>
+  <li><a href="#">Spring Rolls $6.50</a></li>
+  <li><a href="#">Scallion Pancake $5.95</a></li>
+  <li><a href="#">Fresh Rolls $6.95</a></li>
+
+  </ul>
+
+</div>
+
+
+<button class="tablink" onclick="openContent('Overview', this, '#F0F8FF')" id="defaultOpen">Overview</button>
+<button class="tablink" onclick="openContent('Review', this, '#F0F8FF')">Review</button>
+<button class="tablink" onclick="openContent('Menu', this, '#F0F8FF')">Menu</button>
