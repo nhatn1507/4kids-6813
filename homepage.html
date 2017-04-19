@@ -7,7 +7,8 @@
 
         <!-- Load style sheets -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
-
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- need this for arrow Glyphicon to display correctly -->
 
         <link rel="stylesheet" href="homepage.css">
@@ -24,31 +25,18 @@
           crossorigin="anonymous"></script>                        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+            <script src="https://use.fontawesome.com/9f03d0cffe.js"></script>
         
         
-        
-        
-        <script>
-        
-            $('#searchprefix').selectpicker();
-        
-        
-        </script>
     </head>
 
     <body>
     
         <div id="main" > 
-            <i class="material-icons">store</i>
-            <select id="searchprefix">
-                <option > <span class="glyphicon glyphicon-search"></span> </option>
-                <option> asdasd </option>
-            </select>
+
             
-            <select class="form-control glyphicon">
-    <option value="">&#x2212; &#x2212; &#x2212; Hello</option>
-    <option value="glyphicon-list-alt">&#xe032; Text</option>
-</select>
+            
+
             
             
             <div id="searchbar">
@@ -66,6 +54,17 @@
             </div>
             
         
+            
+            <div id="searchprefix" class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Reci.
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Ingr.</a></li>
+                <li><a href="#">Rest.</a></li>
+              </ul>
+            </div>
+            
+            
         </div>
     
     </body>

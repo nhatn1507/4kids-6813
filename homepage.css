@@ -2,4 +2,11 @@
     width: 320px;
     height: 480px;
     background-color: azure;
+    position: relative;
 }
+
+#searchbar {
+    position: absolute;
+    left: 80px;
+}
+
