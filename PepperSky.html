@@ -83,7 +83,8 @@ Static HTML page for Pepper Sky
         }
     }
 }
-
+    
+    
 $(document).ready(function () {
    // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
@@ -105,10 +106,11 @@ $(document).ready(function () {
     });
     
     //User review rating and comments
+    var star = "";
     $(".leavereview").click(function() {
         var ratings = ["onestar", "twostar", "threestar", "fourstar", "fivestar"];
         for (rating = 0; rating<=4; rating++) {
-            var star = "#" + ratings[rating];
+            star = "#" + ratings[rating];
             if (rating<=ratings.indexOf(this.id)) { 
                 $(star).removeClass("fa fa-star-o");
                 $(star).addClass("fa fa-star");
@@ -120,6 +122,37 @@ $(document).ready(function () {
         
          $("#stargroup").animate({"font-size": "0.75em"});
         $("#textreview").show("fast");
+        $("#submitreview").show("fast"); 
+    });
+    //only allow submit button
+    $("#textreview").keyup(function() {
+        if ($("#textreview").val().trim()!=='') {
+             $("#submitreview").removeClass("disabled");
+        } else {
+            $("#submitreview").addClass("disabled");
+        }
+    })
+    
+    //Switching between submiting and editing review
+    $("#submitreview").click(function() {
+        if ($("#submitreview").text() === "Submit") {
+            var content = $("#textreview").val();
+            var $div = $("<div>", {id: "textreviewed", class: "unknown"});
+            $div.text(content);
+            $("#textreview").replaceWith($div);
+            $("#submitreview").text("Edit review");
+        } else {
+            var content = $("#textreviewed").text();
+            var $text =$("<textarea />");
+            $text.css('font-size','.75em');
+            $text.attr('id', 'textreview');         
+            $text.val(content);
+            $("#textreviewed").replaceWith($text);
+            $("#submitreview").text("Submit");
+        }
+
+        
+        
     });
 });
 
@@ -198,6 +231,7 @@ $(document).ready(function () {
                  </p>
             </label>
             <textarea rows="4" class="form-control" id="textreview" style="display:none; font-size: .75em;" > </textarea>
+            <button id="submitreview" type="submit" class="btn btn-outline-primary btn-sm" style="display:none">Submit</button>
         </div>
     </div>
     
