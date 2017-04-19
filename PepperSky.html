@@ -85,12 +85,12 @@ Static HTML page for Pepper Sky
         }
     }
 }
-    
-    
+
+
 $(document).ready(function () {
    // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
-    
+
     //SHOW MORE/SHOW LESS in review
     var showmoreClicked = true;
     $("#showmore").click(function() {
@@ -106,25 +106,25 @@ $(document).ready(function () {
             $("#showmore").text("Show More...");
         }
     });
-    
+
     //User review rating and comments
     var star = "";
     $(".leavereview").click(function() {
         var ratings = ["onestar", "twostar", "threestar", "fourstar", "fivestar"];
         for (rating = 0; rating<=4; rating++) {
             star = "#" + ratings[rating];
-            if (rating<=ratings.indexOf(this.id)) { 
+            if (rating<=ratings.indexOf(this.id)) {
                 $(star).removeClass("fa fa-star-o");
                 $(star).addClass("fa fa-star");
-            } else {             
+            } else {
                 $(star).removeClass("fa fa-star");
                 $(star).addClass("fa fa-star-o");
             }
         }
-        
+
          $("#stargroup").animate({"font-size": "0.75em"});
         $("#textreview").show("fast");
-        $("#submitreview").show("fast"); 
+        $("#submitreview").show("fast");
     });
     //only allow submit button
     $("#textreview").keyup(function() {
@@ -134,7 +134,7 @@ $(document).ready(function () {
             $("#submitreview").addClass("disabled");
         }
     })
-    
+
     //Switching between submiting and editing review
     $("#submitreview").click(function() {
         if ($("#submitreview").text() === "Submit") {
@@ -147,14 +147,14 @@ $(document).ready(function () {
             var content = $("#textreviewed").text();
             var $text =$("<textarea />");
             $text.css('font-size','.75em');
-            $text.attr('id', 'textreview');         
+            $text.attr('id', 'textreview');
             $text.val(content);
             $("#textreviewed").replaceWith($text);
             $("#submitreview").text("Submit");
         }
 
-        
-        
+
+
     });
 });
 
@@ -165,31 +165,31 @@ $(document).ready(function () {
 </script>
 
 </head>
-    
-    
+
+
 <body>
-    
-    
+
+
 <div class = "Pepper Sky" id = "PepperSky" >
-  <a href="google.com"><span style="float: left; margin-left: 10px;"> Map </span></a>
+  <a href="vegeatable-frontend/home.html"><span style="float: left; margin-left: 10px;"> Map </span></a>
   <span id = "PepperSky"> <h3> Pepper Sky </h3></span>
 </div>
 
-    
+
 <button class="tablink" onclick="openContent('Overview', this, '#F0F8FF')" id="defaultOpen">Overview</button>
 <button class="tablink" onclick="openContent('Review', this, '#F0F8FF')">Review</button>
-<button class="tablink" onclick="openContent('Menu', this, '#F0F8FF')">Menu</button>   
-    
-    
-    
+<button class="tablink" onclick="openContent('Menu', this, '#F0F8FF')">Menu</button>
+
+
+
 <div id="Overview" class="tabcontent">
   <h3>Overview</h3>
-    
-    <p>Rating:     
+
+    <p>Rating:
         <i class="fa fa-star" aria-hidden="true" ></i>
         <i class="fa fa-star" aria-hidden="true" ></i>
         <i class="fa fa-star" aria-hidden="true" ></i>
-        <i class="fa fa-star-o" aria-hidden="true"></i> 
+        <i class="fa fa-star-o" aria-hidden="true"></i>
         <i class="fa fa-star-o" aria-hidden="true"></i>
     </p>
   <p>Hours: 7AM - 9PM</p>
@@ -200,17 +200,17 @@ $(document).ready(function () {
 
 <div id="Review" class="tabcontent">
   <h3>Review</h3>
-  <p style="font-size: 1.0em;">by 57 reviewers   
+  <p style="font-size: 1.0em;">by 57 reviewers
     <i class="fa fa-star" aria-hidden="true" ></i>
     <i class="fa fa-star" aria-hidden="true" ></i>
       <i class="fa fa-star" aria-hidden="true" ></i>
-   
-    <i class="fa fa-star-o" aria-hidden="true"></i> 
+
+    <i class="fa fa-star-o" aria-hidden="true"></i>
     <i class="fa fa-star-o" aria-hidden="true"></i>
  </p>
-    
-    
-    
+
+
+
     <!--User can write a review here -->
     <hr>
 
@@ -219,7 +219,7 @@ $(document).ready(function () {
             <i class="fa fa-user" aria-hidden="true" style="font-size:3.5em; color:black; padding:0; margin:0;"></i>
             <p style="padding:0; margin:0;">Username </p>
         </a>
-        
+
     <div class="bd" style="margin-left: 20px;">
         <div class="form-group">
             <label for"textreview">
@@ -229,7 +229,7 @@ $(document).ready(function () {
                     <i id="onestar" class="fa fa-star-o leavereview" aria-hidden="true"></i>
                     <i id="twostar" class="fa fa-star-o leavereview" aria-hidden="true"></i>
                     <i id="threestar" class="fa fa-star-o leavereview" aria-hidden="true"></i>
-                    <i id="fourstar" class="fa fa-star-o leavereview" aria-hidden="true"></i> 
+                    <i id="fourstar" class="fa fa-star-o leavereview" aria-hidden="true"></i>
                     <i id="fivestar" class="fa fa-star-o leavereview" aria-hidden="true"></i>
                  </p>
             </label>
@@ -237,101 +237,101 @@ $(document).ready(function () {
             <button id="submitreview" type="submit" class="btn btn-outline-primary btn-sm" style="display:none">Submit</button>
         </div>
     </div>
-    
+
     </div>
     <hr>
-    
-    
+
+
     <div class="media attribution">
         <a href="#" class="img">
         <img src="assets/person1.jpg" alt="person1" />
         </a>
         <div class="bd">
-            <p style="font-size: .70em; margin: 0; padding:0;">   
+            <p style="font-size: .70em; margin: 0; padding:0;">
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i> 
+                <i class="fa fa-star-o" aria-hidden="true"></i>
                 <i class="fa fa-star-o" aria-hidden="true"></i>
              </p>
             The PadThai is super! Yet, there're not a lot of options for vegan like me.
-        
+
         </div>
     </div>
-    
+
     <div class="media attribution">
         <a href="#" class="img">
         <img src="assets/person2.jpg" alt="person2" />
         </a>
         <div class="bd">
-            <p style="font-size: .70em; margin: 0; padding:0;">   
+            <p style="font-size: .70em; margin: 0; padding:0;">
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star-half-o" aria-hidden="true"></i>
                 <i class="fa fa-star-o" aria-hidden="true"></i>
-             </p>    
+             </p>
         Very very tasty and healthy vegetarian options
         </div>
     </div>
-    
+
     <div class="media attribution">
         <a href="#" class="img">
         <img src="assets/person3.jpg" alt="person3" />
         </a>
         <div class="bd">
-            <p style="font-size: .70em; margin: 0; padding:0;">   
+            <p style="font-size: .70em; margin: 0; padding:0;">
                 <i class="fa fa-star" aria-hidden="true" ></i>
                 <i class="fa fa-star" aria-hidden="true" ></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i> 
-                <i class="fa fa-star-o" aria-hidden="true"></i> 
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
                 <i class="fa fa-star-o" aria-hidden="true"></i>
              </p>
         dECENT sERVICES! THE $6.50 spRING roLLS is oK!!
         </div>
     </div>
-    
+
     <div class="media attribution">
         <a href="#" class="img">
         <img src="assets/person4.jpeg" alt="person4" />
         </a>
         <div class="bd">
-            <p style="font-size: .70em; margin: 0; padding:0;">   
+            <p style="font-size: .70em; margin: 0; padding:0;">
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true" ></i> 
+                <i class="fa fa-star" aria-hidden="true" ></i>
                 <i class="fa fa-star" aria-hidden="true" ></i>
                 <i class="fa fa-star-o" aria-hidden="true"></i>
              </p>
         A must-go for vegetarians in Boston.
         </div>
     </div>
-    
 
-    
+
+
     <!-- Two extra reviews that are started as hidden, and a show more button -->
     <div id="extraReview1" class="media attribution" style="display:none;">
         <a href="#" class="img">
         <img src="assets/person5.jpeg" alt="person5" />
         </a>
         <div class="bd">
-            <p style="font-size: .70em; margin: 0; padding:0;">   
+            <p style="font-size: .70em; margin: 0; padding:0;">
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true" ></i> 
+                <i class="fa fa-star" aria-hidden="true" ></i>
                 <i class="fa fa-star" aria-hidden="true" ></i>
                 <i class="fa fa-star-o" aria-hidden="true"></i>
              </p>
         Perfect weekend eataway. Cheap food yet luxury quality.
         </div>
     </div>
-    
+
     <div id="extraReview2" class="media attribution" style="display:none;">
         <a href="#" class="img">
         <img src="assets/person6.jpeg" alt="person6" />
         </a>
         <div class="bd">
-            <p style="font-size: .70em; margin: 0; padding:0;">   
+            <p style="font-size: .70em; margin: 0; padding:0;">
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star-o" aria-hidden="true"></i>
@@ -341,7 +341,7 @@ $(document).ready(function () {
         I have been eating the Potato Puffs at this place at 10am every Sunday for 3 years because it's so damn cheap.
         </div>
     </div>
-    
+
         <button id="showmore" type="button" class="btn btn-sm btn-block" style="margin-top: 20px; margin-bottom: 20px;">Show More...</button>
 
 </div>
