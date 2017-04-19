@@ -16,10 +16,19 @@ div.centerContent {
 }
 
 div.card {
+  padding: 2px 2px 2px 2px;
   width: 60%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   background-color: white;
   margin: auto;
   text-align: center;
   vertical-align: middle;
+}
+
+h3.title {
+  text-align: center;
+  color: green;
+  font-weight: 900;
+  font-size: 250%;
+  line-height: 1;
 }
