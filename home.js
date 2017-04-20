@@ -2,22 +2,22 @@ $(document).ready(function() {
     $("#searchselect").change(function () {
         $("#searchtext").val('');
        if ($("#searchselect").val().includes("R")) {
-       document.getElementById('searchtext').placeholder='Search Restaurant'; 
+       document.getElementById('searchtext').placeholder='Search Restaurant';
        };
        if ($("#searchselect").val().includes("F")) {
-           document.getElementById('searchtext').placeholder='Search Food'; 
+           document.getElementById('searchtext').placeholder='Search Food';
        };
        if ($("#searchselect").val().includes("I")) {
-           document.getElementById('searchtext').placeholder='Search Ingredient'; 
+           document.getElementById('searchtext').placeholder='Search Ingredient';
        };
     });
-    
+
     $("#searchsubmit").click(function() {
         //MAP reply to click
         //TODO
-        
+
         console.log($(pepperSkyMarker));
-        $(pepperSkyMarker).trigger('click');
+        new google.maps.event.trigger( pepperSkyMarker, 'click' );
     });
 
 });
