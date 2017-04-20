@@ -14,6 +14,10 @@ $(document).ready(function() {
     
     $("#searchsubmit").click(function() {
         //MAP reply to click
+        //TODO
+        
+        console.log($(pepperSkyMarker));
+        $(pepperSkyMarker).trigger('click');
     });
 
 });

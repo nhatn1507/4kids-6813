@@ -37,7 +37,7 @@
 
 
 <!-- JAVASCRIPT CODE -->
-    <script src="home.js"> </script>
+
     <script>
 
     var adphi = {lat: 42.362895, lng: -71.099049};
@@ -55,7 +55,10 @@ controlUI.style.marginBottom = '22px';
 controlUI.style.textAlign = 'center';
 controlUI.title = 'Click to recenter the map';
 controlDiv.appendChild(controlUI);
-
+        
+//TODO: remove this TEMPORARILTY MAKE THIS GLOBAL FOR ACCESS IN HOME.JS
+var pepperSkyMarker;
+        
 // Set CSS for the control interior.
 var controlText = document.createElement('div');
 controlText.style.color = 'rgb(25,25,25)';
@@ -110,7 +113,7 @@ map.setCenter(adphi);
            content: yourLocationContent
          });
 
-         var pepperSkyMarker = new google.maps.Marker({
+         pepperSkyMarker = new google.maps.Marker({
            position: peppersky,
            map: map,
            title: 'Pepper Sky'
@@ -157,7 +160,7 @@ map.setCenter(adphi);
          pepperSkyMarker.addListener('click', function() {
            pepperSkyInfoWindow.open(map, pepperSkyMarker);
          });
-
+        
          adPhi.addListener('click', function() {
            yourLocationWindow.open(map, adPhi);
          });
@@ -167,13 +170,17 @@ map.setCenter(adphi);
 
           centerControlDiv.index = 1;
           map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
+      
       }
+        
+        
+        
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkJo9zT4oqrowzLBILa0AyjcFS8G83RE0&callback=initMap">
     </script>
 
-
+    <script src="home.js"> </script>
 </head>
 
 
