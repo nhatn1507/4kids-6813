@@ -111,6 +111,7 @@ $(document).ready(function () {
     var star = "";
     $(".leavereview").click(function() {
         var ratings = ["onestar", "twostar", "threestar", "fourstar", "fivestar"];
+        num_stars = ratings.indexOf(this.id) + 1;
         for (rating = 0; rating<=4; rating++) {
             star = "#" + ratings[rating];
             if (rating<=ratings.indexOf(this.id)) {
@@ -152,15 +153,38 @@ $(document).ready(function () {
             $("#textreviewed").replaceWith($text);
             $("#submitreview").text("Submit");
         }
-
-
-
     });
 });
 
+var num_stars = 0;
 
+var reviewMouseOver = function(index){
+  var reviewStars = [document.getElementById('onestar'), document.getElementById('twostar'), document.getElementById('threestar'), document.getElementById('fourstar'), document.getElementById('fivestar')]
+  for (var i = 0; i < 5; i++){
+    star = reviewStars[i]
+    if (i < index){
+      star.classList.remove('fa-star-o');
+      star.classList.add('fa-star');
+    } else{
+      star.classList.remove('fa-star');
+      star.classList.add('fa-star-o');
+    }
+  }
+}
 
-
+var reviewMouseOut = function(){
+  var reviewStars = [document.getElementById('onestar'), document.getElementById('twostar'), document.getElementById('threestar'), document.getElementById('fourstar'), document.getElementById('fivestar')]
+  for (var i = 0; i < 5; i++){
+    star = reviewStars[i]
+    if (i < num_stars){
+      star.classList.remove('fa-star-o');
+      star.classList.add('fa-star');
+    } else {
+      star.classList.remove('fa-star');
+      star.classList.add('fa-star-o');
+    }
+  }
+}
 
 </script>
 
@@ -226,11 +250,11 @@ $(document).ready(function () {
                 <p style="font-size: .75em; padding:0; margin: 0;"> Leave a review </p>
                 <p id="stargroup" style="font-size: 2em; margin: 0; padding:0;">
 
-                    <i id="onestar" class="fa fa-star-o leavereview" aria-hidden="true"></i>
-                    <i id="twostar" class="fa fa-star-o leavereview" aria-hidden="true"></i>
-                    <i id="threestar" class="fa fa-star-o leavereview" aria-hidden="true"></i>
-                    <i id="fourstar" class="fa fa-star-o leavereview" aria-hidden="true"></i>
-                    <i id="fivestar" class="fa fa-star-o leavereview" aria-hidden="true"></i>
+                    <i id="onestar" class="fa fa-star-o leavereview" onmouseover='reviewMouseOver(1)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
+                    <i id="twostar" class="fa fa-star-o leavereview" onmouseover='reviewMouseOver(2)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
+                    <i id="threestar" class="fa fa-star-o leavereview" onmouseover='reviewMouseOver(3)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
+                    <i id="fourstar" class="fa fa-star-o leavereview" onmouseover='reviewMouseOver(4)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
+                    <i id="fivestar" class="fa fa-star-o leavereview" onmouseover='reviewMouseOver(5)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
                  </p>
             </label>
             <textarea rows="4" class="form-control" id="textreview" style="display:none; font-size: .75em;" > </textarea>
