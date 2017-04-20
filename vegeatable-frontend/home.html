@@ -64,10 +64,18 @@ map.setCenter(adphi);
 
       function initMap() {
         var peppersky = {lat: 42.364211, lng: -71.102915};
+        var beantown = {lat:42.361812, lng: -71.097237};
+        var veggiegalaxy = {lat: 42.363424, lng: -71.101296}
+        var marychung = {lat: 42.363517, lng: -71.101396}
+        var toscanini = {lat: 42.363601, lng: -71.09938}
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
+          zoom: 17,
           center: adphi
         });
+
+        var yourLocationContent = '<div id="content">'+
+            '<h3>Your Location</h3>'+
+            '</div>';
 
         var pepperSkyContent = '<div id="content">'+
              '<div id="siteNotice">'+
@@ -87,10 +95,38 @@ map.setCenter(adphi);
            content: pepperSkyContent
          });
 
-         var pepperSky = new google.maps.Marker({
+         var yourLocationWindow = new google.maps.InfoWindow({
+           content: yourLocationContent
+         });
+
+         var pepperSkyMarker = new google.maps.Marker({
            position: peppersky,
            map: map,
            title: 'Pepper Sky'
+         });
+
+         var beanTownMarker = new google.maps.Marker({
+           position: beantown,
+           map: map,
+           title: 'Beantown'
+         });
+
+         var veggieGalaxyMarker = new google.maps.Marker({
+           position: veggiegalaxy,
+           map: map,
+           title: 'Veggie Galaxy'
+         });
+
+         var maryChungMarker = new google.maps.Marker({
+           position: marychung,
+           map: map,
+           title: 'Mary Chung'
+         });
+
+         var toscaniniMarker = new google.maps.Marker({
+           position: toscanini,
+           map: map,
+           title: "Toscanini's"
          });
 
          var image = {
@@ -107,8 +143,12 @@ map.setCenter(adphi);
            icon: image
          });
 
-         pepperSky.addListener('click', function() {
-           pepperSkyInfoWindow.open(map, pepperSky);
+         pepperSkyMarker.addListener('click', function() {
+           pepperSkyInfoWindow.open(map, pepperSkyMarker);
+         });
+
+         adPhi.addListener('click', function() {
+           yourLocationWindow.open(map, adPhi);
          });
 
          var centerControlDiv = document.createElement('div');
