@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $("#searchselect").change(function () {
+        $("#searchtext").val('');
        if ($("#searchselect").val().includes("R")) {
        document.getElementById('searchtext').placeholder='Search Restaurant'; 
        };
