@@ -41,7 +41,25 @@ Static HTML page for Pepper Sky
   * Chooses the tab and shows the content
   *
   */
+  // A short jQuery extension to read query parameters from the URL.
+  $.extend({
+    getUrlVars: function() {
+      var vars = [], pair;
+      var pairs = window.location.search.substr(1).split('&');
+      for (var i = 0; i < pairs.length; i++) {
+        pair = pairs[i].split('=');
+        vars.push(pair[0]);
+        vars[pair[0]] = pair[1] &&
+            decodeURIComponent(pair[1].replace(/\+/g, ' '));
+      }
+      return vars;
+    },
+    getUrlVar: function(name) {
+      return $.getUrlVars()[name];
+    }
+  });
 
+  var open = $.getUrlVar('open');
 
  function openContent(name, elmnt, color) {
      // Hide all elements with class="tabcontent" by default */
@@ -89,8 +107,12 @@ Static HTML page for Pepper Sky
 
 $(document).ready(function () {
    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-
+   if (open != null){
+     document.getElementById(open).click();
+   } else {
+     document.getElementById("overview").click();
+   }
+    
     //SHOW MORE/SHOW LESS in review
     var showmoreClicked = true;
     $("#showmore").click(function() {
@@ -200,9 +222,9 @@ var reviewMouseOut = function(){
 </div>
 
 
-<button class="tablink" onclick="openContent('Overview', this, '#F0F8FF')" id="defaultOpen">Overview</button>
-<button class="tablink" onclick="openContent('Review', this, '#F0F8FF')">Review</button>
-<button class="tablink" onclick="openContent('Menu', this, '#F0F8FF')">Menu</button>
+<button class="tablink" onclick="openContent('Overview', this, '#F0F8FF')" id="overview">Overview</button>
+<button class="tablink" onclick="openContent('Review', this, '#F0F8FF')" id="review">Review</button>
+<button class="tablink" onclick="openContent('Menu', this, '#F0F8FF')" id="menu">Menu</button>
 
 
 
