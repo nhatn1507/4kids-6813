@@ -10,12 +10,14 @@ body {
 }
 
 div.centerContent {
+    
   margin: auto;
   text-align: center;
   vertical-align: middle;
 }
 
 div.card {
+position: relative;
   padding: 2px 2px 2px 2px;
   width: 60%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -33,6 +35,35 @@ h3.title {
   line-height: 1;
 }
 
+
 .fa.fa-star, .fa.fa-star-half-o, .fa.fa-star-o  {
     color: orange;
 }
+
+
+#search {
+    width: 60%;
+    margin: 0 auto;
+}
+div.inlinebox {
+    display: inline-block;
+    width: 400px;
+}
+
+
+#seachbox {
+    position: relative; 
+    width: 500px;
+}
+
+#searchoption {
+    width: 50px;
+    position: relative;
+
+}
+
+select{
+  font-family: FontAwesome,Material Icons, Ionicons,  sans-serif;
+}
+
+
