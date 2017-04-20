@@ -32,3 +32,7 @@ h3.title {
   font-size: 250%;
   line-height: 1;
 }
+
+.fa.fa-star, .fa.fa-star-half-o, .fa.fa-star-o  {
+    color: orange;
+}

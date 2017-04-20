@@ -2,6 +2,19 @@
 <html>
   <head>
     <link rel="stylesheet" href="mainLayout.css">
+    <!-- Load style sheets -->
+    <link rel="stylesheet" href=
+      "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+    <!-- Use mobile-aware viewport -->
+    <meta name="viewport" content=
+      "width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Load any supplemental Javascript libraries here -->
+    <script src=
+      "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </script>
+            <script src="https://use.fontawesome.com/9f03d0cffe.js"></script>
+
   </head>
   <body>
       <div class="centerContent">
@@ -55,15 +68,17 @@ map.setCenter(adphi);
           zoom: 14,
           center: adphi
         });
+
         var pepperSkyContent = '<div id="content">'+
              '<div id="siteNotice">'+
              '</div>'+
              '<h1 id="firstHeading" class="firstHeading">Pepper Sky</h1>'+
              '<div id="bodyContent">'+
-             '<p><b>Rating: </b> <img src="img/64px-Full_Star_Yellow.png" style="width:32px;height:32px;vertical-align:middle;"><img src="img/64px-Full_Star_Yellow.png" style="width:32px;height:32px;vertical-align:middle;">' +
-             '<img src="img/64px-Full_Star_Yellow.png" style="width:32px;height:32px;vertical-align:middle;"><img src="img/64px-Full_Star_Yellow.png" style="width:32px;height:32px;vertical-align:middle;"></p>' +
+             '<p><b>Rating: </b> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true" ></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>' +
              '<p><b>Price: $$ </b> </p>'+
              '<p><b>Distance: </b> 0.3 mi'+
+             '<br></br>'+
+             '<a href="../PepperSky.html" class="btn btn-primary">See More</a>'
              '</div>'+
              '</div>';
 
