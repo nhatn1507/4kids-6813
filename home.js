@@ -13,11 +13,9 @@ $(document).ready(function() {
     });
     
     $("#searchsubmit").click(function() {
-        //MAP reply to click
-        //TODO
-        
-        console.log($(pepperSkyMarker));
-        $(pepperSkyMarker).trigger('click');
+        google.maps.event.trigger(pepperSkyMarker, 'click', {
+          latLng: new google.maps.LatLng(0, 0)
+        });
     });
 
 });
