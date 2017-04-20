@@ -156,6 +156,10 @@ $(document).ready(function () {
 
 
     });
+
+    
+
+
 });
 
 
@@ -176,9 +180,9 @@ $(document).ready(function () {
 </div>
 
 
-<button class="tablink" onclick="openContent('Overview', this, '#F0F8FF')" id="defaultOpen">Overview</button>
+<button class="tablink" onclick="openContent('Overview', this, '#F0F8FF')">Overview</button>
 <button class="tablink" onclick="openContent('Review', this, '#F0F8FF')">Review</button>
-<button class="tablink" onclick="openContent('Menu', this, '#F0F8FF')">Menu</button>
+<button class="tablink" onclick="openContent('Menu', this, '#F0F8FF')" id="defaultOpen">Menu</button>
 
 
 
@@ -347,17 +351,21 @@ $(document).ready(function () {
 </div>
 
 <div id="Menu" class="tabcontent">
-  <h3>Menu</h3>
-  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Menu search">
-  <ul id="myUL">
+  <div style="float:left;">
+  <a href="PepperSky.html"><span style="display:inline;" id = "PadthaiThings">Menu </span></a>
 
-  <li><a href="padthai.html">Pad Thai $8.95</a></li>
-  <li><a href="padthai.html">Potato Puffs $5.95</a></li>
-  <li><a href="padthai.html">Spring Rolls $6.50</a></li>
-  <li><a href="padthai.html">Scallion Pancake $5.95</a></li>
-  <li><a href="padthai.html">Fresh Rolls $6.95</a></li>
+  <span style="display:inline; " id = "PadthaiThings">/ Padthai</span>
+  </div>
+  <br/>
 
-  </ul>
+
+
+
+  <img src="padthai.png" alt="Padthai" style="width:304px;height:400px;" id = "PadthaiImg">
+
+
+
+
 
 </div>
 
