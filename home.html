@@ -11,8 +11,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- need this for arrow Glyphicon to display correctly -->
 
-        <link rel="stylesheet" href="homepage.css">
-
         <!-- Use mobile-aware viewport -->
         <meta name="viewport" content= "width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -39,7 +37,7 @@
       
       
 <!-- JAVASCRIPT CODE -->
-
+    <script src="home.js"> </script>
     <script>
 
     var adphi = {lat: 42.362895, lng: -71.099049};
@@ -190,10 +188,10 @@ map.setCenter(adphi);
 
         <div id="search">
             <div class="inlinebox" id="searchoption">
-                <select > 
-                    <option id="restaurant" selected> &#xe8d1 </option>
-                    <option id="food"> &#xe561 </option> 
-                    <option id="ingredient"> &#xf470 </option>
+                <select id="searchselect" > 
+                    <option id="restaurant" selected> &#xe8d1 R</option>
+                    <option id="food"> &#xe561 F</option> 
+                    <option id="ingredient"> &#xf470 I</option>
                          
                      
                 </select>
@@ -201,10 +199,10 @@ map.setCenter(adphi);
             <div class="inlinebox" id="searchbox">
                 <div class="btn-group"> 
                     <div class="input-group">
-                        <input type="search" class="form-control" id="searchtext" placeholder="Seach">
+                        <input type="search" class="form-control" id="searchtext" placeholder="Seach Restaurant">
 
                         <div class="input-group-btn">
-                        <button id="seachsubmit" class="btn btn-block" type="submit">
+                        <button id="searchsubmit" class="btn btn-block" type="submit">
                         <i class="glyphicon glyphicon-search"></i>
                         </button>
                         </div>
