@@ -1,39 +1,42 @@
+div {
+    border: 1px solid red;
+}
+#left, #right {
+    float: left;
+    width: 50%;
+    height: 90vh;
+}
+
+#innerleft {
+    padding: 40px;
+    font-family: : 'Nobile', sans-serif;
+}
+#innerright {
+    background-color: aqua;
+    padding: 0px;
+    font-family: : 'Nobile', sans-serif;
+}
+
+
+
+#header {
+    text-align: center;
+    font-family: "EB Garamond", serif;
+    background-color: #512da8;
+    color: white;
+    font-size: 40px;
+    letter-spacing: 0.3em;
+    height: 2em;
+}
+
 #map {
   height: 700px;
   width: 100%;
   margin: auto;
   text-align: center;
+  background-color: antiquewhite;
 }
 
-body {
-    background-color: lightblue;
-}
-
-div.centerContent {
-    
-  margin: auto;
-  text-align: center;
-  vertical-align: middle;
-}
-
-div.card {
-position: relative;
-  padding: 2px 2px 2px 2px;
-  width: 60%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  background-color: white;
-  margin: auto;
-  text-align: center;
-  vertical-align: middle;
-}
-
-h3.title {
-  text-align: center;
-  color: green;
-  font-weight: 900;
-  font-size: 250%;
-  line-height: 1;
-}
 
 
 .fa.fa-star, .fa.fa-star-half-o, .fa.fa-star-o  {
