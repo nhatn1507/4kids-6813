@@ -1,0 +1,46 @@
+body {
+    background-image: url("foodimage/tray.jpeg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+
+#left, #right {
+  float: left ;
+  width: 50% ;
+}
+
+#innerleft, #innerright {
+    padding: 40px;
+    font-family: 'Nobile', sans-serif;
+}
+
+
+
+
+#header {
+  text-align: center ;
+font-family: 'EB Garamond', serif;
+    background-color: #512da8;
+    color: white;
+    font-size: 40px;
+    letter-spacing: 0.3em;
+    height: 2em;
+}
+
+
+
+div.userinput {
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 7px 0;
+}
+
+
+#email
+#pass
+#first
+#last
+#email2
+#pass2
+#zip
