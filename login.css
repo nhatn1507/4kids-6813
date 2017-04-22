@@ -1,4 +1,9 @@
+body {
+    background-image: url("foodimage/tray.jpeg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 
+}
 
 #left, #right {
   float: left ;
@@ -20,6 +25,7 @@ font-family: 'EB Garamond', serif;
     color: white;
     font-size: 40px;
     letter-spacing: 0.3em;
+    height: 2em;
 }
 
 
