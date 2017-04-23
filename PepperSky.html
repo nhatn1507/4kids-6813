@@ -1,216 +1,46 @@
-<!--
-Static HTML page for Pepper Sky
--->
 <!DOCTYPE html>
 <html>
-
-
 <head>
-<meta charset="utf-8">
-<title>PepperSky</title>
+    <meta charset="utf-8">
+    <title>Log In - VegEatable</title>
+    <!-- Use mobile-aware viewport -->
+    <meta name="viewport" content= "width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Load style sheets -->
-<link rel="stylesheet" href=
-  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <!-- JQUERY -->
+    <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+    crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+    crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="PepperSky.css">
-
-<!-- Use mobile-aware viewport -->
-<meta name="viewport" content=
-  "width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Load any supplemental Javascript libraries here -->
-<script src=
-  "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src=
-  "https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.2/seedrandom.js">
-</script>
-        <script src="https://use.fontawesome.com/9f03d0cffe.js"></script>
-
+    <!-- ICONS -->
+    <script src="https://use.fontawesome.com/9f03d0cffe.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css" integrity="sha256-D3+gw6JE4hEJ9pnCs+BglSfZ2yG5gF+JGdPJ/v183fo=" crossorigin="anonymous" />
-<script>
+    <!-- FONTS --> 
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nobile" rel="stylesheet">
 
-/*
- * javascrpit goes here
- *
- */
+    <!-- MAIN CSS -->   
+    <link rel="stylesheet" href="PepperSky.css">
 
- /*
-  * Chooses the tab and shows the content
-  *
-  */
-  // A short jQuery extension to read query parameters from the URL.
-  $.extend({
-    getUrlVars: function() {
-      var vars = [], pair;
-      var pairs = window.location.search.substr(1).split('&');
-      for (var i = 0; i < pairs.length; i++) {
-        pair = pairs[i].split('=');
-        vars.push(pair[0]);
-        vars[pair[0]] = pair[1] &&
-            decodeURIComponent(pair[1].replace(/\+/g, ' '));
-      }
-      return vars;
-    },
-    getUrlVar: function(name) {
-      return $.getUrlVars()[name];
-    }
-  });
-
-  var open = $.getUrlVar('open');
-
- function openContent(name, elmnt, color) {
-     // Hide all elements with class="tabcontent" by default */
-     var i, tabcontent, tablinks;
-     tabcontent = document.getElementsByClassName("tabcontent");
-     for (i = 0; i < tabcontent.length; i++) {
-         tabcontent[i].style.display = "none";
-     }
-
-     // Remove the background color of all tablinks/buttons
-     tablinks = document.getElementsByClassName("tablink");
-     for (i = 0; i < tablinks.length; i++) {
-         tablinks[i].style.backgroundColor = "";
-     }
-
-     // Show the specific tab content
-     document.getElementById(name).style.display = "block";
-
-     // Add the specific color to the button used to open the tab content
-     elmnt.style.backgroundColor = color;
- }
+    <!-- MAIN JS -->
+    <script src="PepperSky.js"> </script>
 
 
-
-
- function myFunction() {
-    // Declare variables
-    var input, filter, ul, li, a, i;
-    input = document.getElementById('myInput');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName('li');
-
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
-
-
-$(document).ready(function () {
-   // Get the element with id="defaultOpen" and click on it
-   if (open != null){
-     document.getElementById(open).click();
-   } else {
-     document.getElementById("overview").click();
-   }
-
-    //SHOW MORE/SHOW LESS in review
-    var showmoreClicked = true;
-    $("#showmore").click(function() {
-        if (showmoreClicked) {
-            $("#extraReview1").show("fast");
-            $("#extraReview2").show("fast");
-            showmoreClicked = false;
-            $("#showmore").text("Show Less...");
-        } else {
-            $("#extraReview1").hide("fast");
-            $("#extraReview2").hide("fast");
-            showmoreClicked = true;
-            $("#showmore").text("Show More...");
-        }
-    });
-
-    //User review rating and comments
-    var star = "";
-    $(".leavereview").click(function() {
-        var ratings = ["onestar", "twostar", "threestar", "fourstar", "fivestar"];
-        num_stars = ratings.indexOf(this.id) + 1;
-        for (rating = 0; rating<=4; rating++) {
-            star = "#" + ratings[rating];
-            if (rating<=ratings.indexOf(this.id)) {
-                $(star).removeClass("fa fa-star-o");
-                $(star).addClass("fa fa-star");
-            } else {
-                $(star).removeClass("fa fa-star");
-                $(star).addClass("fa fa-star-o");
-            }
-        }
-
-         $("#stargroup").animate({"font-size": "0.75em"});
-        $("#textreview").show("fast");
-        $("#submitreview").show("fast");
-    });
-    //only allow submit button
-    $("#textreview").keyup(function() {
-        if ($("#textreview").val().trim()!=='') {
-             $("#submitreview").removeClass("disabled");
-        } else {
-            $("#submitreview").addClass("disabled");
-        }
-    })
-
-    //Switching between submiting and editing review
-    $("#submitreview").click(function() {
-        if ($("#submitreview").text() === "Submit") {
-            var content = $("#textreview").val();
-            var $div = $("<div>", {id: "textreviewed", class: "unknown"});
-            $div.text(content);
-            $("#textreview").replaceWith($div);
-            $("#submitreview").text("Edit review");
-        } else {
-            var content = $("#textreviewed").text();
-            var $text =$("<textarea />");
-            $text.css('font-size','.75em');
-            $text.attr('id', 'textreview');
-            $text.val(content);
-            $("#textreviewed").replaceWith($text);
-            $("#submitreview").text("Submit");
-        }
-    });
-});
-
-var num_stars = 0;
-
-var reviewMouseOver = function(index){
-  var reviewStars = [document.getElementById('onestar'), document.getElementById('twostar'), document.getElementById('threestar'), document.getElementById('fourstar'), document.getElementById('fivestar')]
-  for (var i = 0; i < 5; i++){
-    star = reviewStars[i]
-    if (i < index){
-      star.classList.remove('fa-star-o');
-      star.classList.add('fa-star');
-    } else{
-      star.classList.remove('fa-star');
-      star.classList.add('fa-star-o');
-    }
-  }
-}
-
-var reviewMouseOut = function(){
-  var reviewStars = [document.getElementById('onestar'), document.getElementById('twostar'), document.getElementById('threestar'), document.getElementById('fourstar'), document.getElementById('fivestar')]
-  for (var i = 0; i < 5; i++){
-    star = reviewStars[i]
-    if (i < num_stars){
-      star.classList.remove('fa-star-o');
-      star.classList.add('fa-star');
-    } else {
-      star.classList.remove('fa-star');
-      star.classList.add('fa-star-o');
-    }
-  }
-}
-
-</script>
-
+    
 </head>
+
 
 
 <body>
