@@ -1,37 +1,51 @@
-div {
-    border: 1px solid red;
+#left {
+    background-image: url("foodimage/table.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
+
+
+
 #left, #right {
     float: left;
     width: 50%;
     height: 90vh;
 }
 
-#innerleft {
-    padding: 40px;
-    font-family: : 'Nobile', sans-serif;
-}
-#innerright {
-    background-color: aqua;
-    padding: 0px;
-    font-family: : 'Nobile', sans-serif;
-}
-
-
-
 #header {
     text-align: center;
     font-family: "EB Garamond", serif;
-    background-color: #512da8;
+    background-color:#140078;
     color: white;
     font-size: 40px;
     letter-spacing: 0.3em;
-    height: 2em;
+    padding: auto 0;
+    height: 10vh;
+    position: relative;
+}
+
+#login {
+    font-family: : 'Nobile', sans-serif;
+    position: absolute; 
+    right: 6%; 
+    top: 1.5vh;
+    letter-spacing: normal;
+    font-size: 14px;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 7px;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+}
+#login:hover,#login:active {
+    background-color: #66ffa6;
+    color: black;
 }
 
 #map {
-  height: 700px;
-  width: 100%;
+  height: 90vh;
   margin: auto;
   text-align: center;
   background-color: antiquewhite;
@@ -43,26 +57,29 @@ div {
     color: orange;
 }
 
+#innerleft {
+    margin: 30% auto;
+    font-family: : 'Nobile', sans-serif;
+}
+
 
 #search {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
+    
 }
-div.inlinebox {
-    display: inline-block;
-    width: 400px;
-}
-
-
-#seachbox {
-    position: relative; 
-    width: 500px;
-}
-
 #searchoption {
-    width: 60px;
-    position: relative;
+    margin-bottom: 4px;
+}
+#seachbox {
+    border: 2px solid #66ffa6;
+}
 
+#searchselect {
+    overflow: visible;
+    border: 2px solid #fff;
+    border-radius: 7px;
+    outline: none;
 }
 
 select{

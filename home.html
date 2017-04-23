@@ -9,7 +9,7 @@
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
     <!-- JQUERY -->
     <script
     src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="home.css">
 
 
-    <!-- JAVASCRIPT CODE -->
+    <!-- MAIN JS -->
     <script src="home.js"> </script>
     <!-- THIS HAS TO COME AFTER HOME.JS FOR MAP TO DISPLAY-->
     <script async defer
@@ -51,12 +51,16 @@
 <body>
     
     <div id="container">
-        <div id="header"> VegEatable</div>
+        <div id="header"> VegEatable
+
+        <a id="login" href="Login.html"> <b> Log In/Sign Up</b></a> 
+        </div>
         <div id="left">
             <div id="innerleft">
             
                 <div id="search">
-                    <div class="inlinebox" id="searchoption">
+                    
+                    <div id="searchoption">
                         <select id="searchselect" > 
                             <option id="restaurant" selected> &#xe8d1 R</option>
                             <option id="food"> &#xe561 F</option> 
@@ -65,7 +69,8 @@
 
                         </select>
                     </div>
-                    <div class="inlinebox" id="searchbox">
+                    
+                    <div id="searchbox">
                         <div class="btn-group">
                             <div class="input-group">
                                 <input type="search" class="form-control" id="searchtext" placeholder="Seach Restaurant">
