@@ -48,10 +48,6 @@ body {
 }
 
 /* Style each tab content individually */
-#Overview {background-color:#F0F8FF;}
-#Review {background-color:#F0F8FF;}
-#Menu {background-color:#F0F8FF;}
-
 
 #myInput {
     background-image: url('searchicon.png'); /* Add a search icon to input */
