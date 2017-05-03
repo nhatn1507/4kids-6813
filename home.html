@@ -55,10 +55,10 @@ controlUI.style.marginBottom = '22px';
 controlUI.style.textAlign = 'center';
 controlUI.title = 'Click to recenter the map';
 controlDiv.appendChild(controlUI);
-        
+
 //TODO: remove this TEMPORARILTY MAKE THIS GLOBAL FOR ACCESS IN HOME.JS
 var pepperSkyMarker;
-        
+
 // Set CSS for the control interior.
 var controlText = document.createElement('div');
 controlText.style.color = 'rgb(25,25,25)';
@@ -160,7 +160,7 @@ map.setCenter(adphi);
          pepperSkyMarker.addListener('click', function() {
            pepperSkyInfoWindow.open(map, pepperSkyMarker);
          });
-        
+
          adPhi.addListener('click', function() {
            yourLocationWindow.open(map, adPhi);
          });
@@ -170,17 +170,18 @@ map.setCenter(adphi);
 
           centerControlDiv.index = 1;
           map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
-      
+
       }
-        
-        
-        
+
+
+
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkJo9zT4oqrowzLBILa0AyjcFS8G83RE0&callback=initMap">
     </script>
 
     <script src="home.js"> </script>
+
 </head>
 
 
@@ -195,12 +196,12 @@ map.setCenter(adphi);
 
         <div id="search">
             <div class="inlinebox" id="searchoption">
-                <select id="searchselect" > 
+                <select id="searchselect" >
                     <option id="restaurant" selected> &#xe8d1 R</option>
-                    <option id="food"> &#xe561 F</option> 
+                    <option id="food"> &#xe561 F</option>
                     <option id="ingredient"> &#xf470 I</option>
-                         
-                     
+
+
                 </select>
             </div>
             <div class="inlinebox" id="searchbox">
