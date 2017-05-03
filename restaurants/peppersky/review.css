@@ -1,7 +1,7 @@
 /*GENERAL CSS*/
 
 * {
-
+/*border: 1px solid black;*/
 font-family: 'Nobile', sans-serif;
 }
 
@@ -13,7 +13,7 @@ font-family: 'Nobile', sans-serif;
 }
 
 #innerleft, #innerright {
-    padding: 40px;
+    padding: 0  20px    ;
 }
 
 
@@ -82,4 +82,13 @@ div.title {
     color: #00b248;
     font-size: 30px;
     letter-spacing: 0.3em;
+}
+
+
+
+.fa.fa-star, .fa.fa-star-half-o, .fa.fa-star-o  {
+    color: orange;
+    padding: 0 4px;
+    margin: 0;
+    
 }
