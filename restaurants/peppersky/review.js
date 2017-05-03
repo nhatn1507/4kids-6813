@@ -19,7 +19,11 @@ $(document).ready(function () {
 
     //User review rating and comments
     var star = "";
+    var clickedstar = false;
     $(".leavereview").click(function() {
+        clickedstar = true;
+        $("#textreview").keyup();
+        
         var ratings = ["onestar", "twostar", "threestar", "fourstar", "fivestar"];
         num_stars = ratings.indexOf(this.id) + 1;
         for (rating = 0; rating<=4; rating++) {
@@ -32,35 +36,88 @@ $(document).ready(function () {
                 $(star).addClass("fa fa-star-o");
             }
         }
+        
     });
+    
     //only allow submit button
     $("#textreview").keyup(function() {
-        if ($("#textreview").val().trim()!=='') {
-             $("#submitreview").removeClass("disabled");
+        if (($("#textreview").val().trim()!=='') && clickedstar) {  
+            $("#submitreview").prop('disabled', false); // Disables visually + functionally
         } else {
-            $("#submitreview").addClass("disabled");
+            $("#submitreview").prop('disabled', true);
         }
     })
+    
+    
+    //LOCALSTORAGE exist - restore review
+    if (localStorage.hadreview === "true") {
+        $("#numreview").text('by 7 reviewers');
+        
+        $("#textreview").val(localStorage.review);
+        
+        var userreview = $("#textreview").val();
+        $("#newreview").text(userreview);
+        
+        var ratings = ["1s", "2s", "3s", "4s", "5s"];
+        var ratings2 = ["onestar", "twostar", "threestar", "fourstar", "fivestar"];
+        
+        
+        var rated = Number(localStorage.star);
+        
 
-    //Switching between submiting and editing review
+        var fakeClick = "#" + ratings2[rated-1];
+        $(fakeClick).click();
+        
+        for (rating = 0; rating<=4; rating++) {
+            var star = "#" + ratings[rating];
+            if (rating <= rated -1) {
+                $(star).removeClass("fa fa-star-o");
+                $(star).addClass("fa fa-star");
+            } else {
+                $(star).removeClass("fa fa-star");
+                $(star).addClass("fa fa-star-o");
+            }
+
+        }  
+
+        $("#usernewreview").show('fast');
+            $("#submitreview").text("Update review");
+    }
+    
+
+    //Update user new review into List of reviews
+    //ALSO update localStorage
     $("#submitreview").click(function() {
-        if ($("#submitreview").text() === "Submit") {
-            var content = $("#textreview").val();
-            var $div = $("<div>", {id: "textreviewed", class: "unknown"});
-            $div.text(content);
-            $("#textreview").replaceWith($div);
-            $("#submitreview").text("Edit review");
-        } else {
-            var content = $("#textreviewed").text();
-            var $text =$("<textarea />");
-            $text.css('font-size','.75em');
-            $text.attr('id', 'textreview');
-            $text.val(content);
-            $("#textreviewed").replaceWith($text);
-            $("#submitreview").text("Submit");
-        }
+        $("#numreview").text('by 7 reviewers');
+        var userreview = $("#textreview").val();
+        $("#newreview").text(userreview);
+        
+        //localStorage to save review
+        localStorage.review = userreview;
+        localStorage.hadreview = "true";
+        localStorage.star = num_stars;
+
+        
+        var ratings = ["1s", "2s", "3s", "4s", "5s"];
+        for (rating = 0; rating<=4; rating++) {
+            star = "#" + ratings[rating];
+            if (rating <= num_stars -1) {
+                $(star).removeClass("fa fa-star-o");
+                $(star).addClass("fa fa-star");
+            } else {
+                $(star).removeClass("fa fa-star");
+                $(star).addClass("fa fa-star-o");
+            }
+
+        }  
+
+        $("#usernewreview").show('fast');
+            $("#submitreview").text("Update review");
+
     });
 });
+
+
 
 var num_stars = 0;
 
