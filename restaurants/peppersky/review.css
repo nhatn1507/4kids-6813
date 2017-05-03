@@ -69,8 +69,9 @@ li a:hover:not(.active) {
 /*TITLES - ABout us, contact us*/
 div.title {
     text-align: center;
-    padding: 5% 0;
+    padding: 10% auto;
     font-size: 20px;
+    height: 35px;
 
 }
 
@@ -88,7 +89,15 @@ div.title {
 
 .fa.fa-star, .fa.fa-star-half-o, .fa.fa-star-o  {
     color: orange;
-    padding: 0 4px;
     margin: 0;
     
+}
+
+.btn.fa {
+        padding: 5px 4px;
+}
+
+#submitreview {
+    margin: 10px 0;
+    width: 130px;
 }
