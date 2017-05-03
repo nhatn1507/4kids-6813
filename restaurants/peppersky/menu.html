@@ -35,7 +35,30 @@
     
     
     <!-- MAIN CSS  FILE-->    
-    <link rel="stylesheet" href="overview.css">
+    <link rel="stylesheet" href="menu.css">
+
+
+    <script type="text/javascript">
+        
+        function myFunction() {
+            // Declare variables
+            var input, filter, ul, li, a, i;
+            input = document.getElementById('myInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName('li');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </head>
     
 <body>
@@ -61,7 +84,20 @@
             <div class='title'> Our Menu </div>
             <div id="innerleft">
                 <div style="margin: 0 auto; max-width: 300px; "> 
-                    CONTENT HERE
+                    <div id="Menu" class="tabcontent">
+                        
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Menu search">
+                        <ul id="myUL">
+
+                            <li><a href="padthai.html">Pad Thai $8.95</a></li>
+                            <li><a href="padthai.html">Potato Puffs $5.95</a></li>
+                            <li><a href="padthai.html">Spring Rolls $6.50</a></li>
+                            <li><a href="padthai.html">Scallion Pancake $5.95</a></li>
+                            <li><a href="padthai.html">Fresh Rolls $6.95</a></li>
+
+                        </ul>
+
+                    </div>
                 </div>
             </div>
         </div>
