@@ -1,65 +1,85 @@
+#left {
+    background-image: url("foodimage/table.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+
+#left, #right {
+    float: left;
+    width: 50%;
+    height: 90vh;
+}
+
+#header {
+    text-align: center;
+    font-family: "EB Garamond", serif;
+    background-color:#140078;
+    color: white;
+    font-size: 40px;
+    letter-spacing: 0.3em;
+    padding: auto 0;
+    height: 10vh;
+    position: relative;
+}
+
+#login {
+    font-family: : 'Nobile', sans-serif;
+    position: absolute; 
+    right: 6%; 
+    top: 1.5vh;
+    letter-spacing: normal;
+    font-size: 14px;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 7px;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+}
+#login:hover,#login:active {
+    background-color: #66ffa6;
+    color: black;
+}
+
 #map {
-  height: 700px;
-  width: 100%;
+  height: 90vh;
   margin: auto;
   text-align: center;
+  background-color: antiquewhite;
 }
 
-body {
-    background-color: lightblue;
-}
-
-div.centerContent {
-    
-  margin: auto;
-  text-align: center;
-  vertical-align: middle;
-}
-
-div.card {
-position: relative;
-  padding: 2px 2px 2px 2px;
-  width: 60%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  background-color: white;
-  margin: auto;
-  text-align: center;
-  vertical-align: middle;
-}
-
-h3.title {
-  text-align: center;
-  color: green;
-  font-weight: 900;
-  font-size: 250%;
-  line-height: 1;
-}
 
 
 .fa.fa-star, .fa.fa-star-half-o, .fa.fa-star-o  {
     color: orange;
 }
 
+#innerleft {
+    margin: 30% auto;
+    font-family: : 'Nobile', sans-serif;
+}
+
 
 #search {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
+    
 }
-div.inlinebox {
-    display: inline-block;
-    width: 400px;
-}
-
-
-#seachbox {
-    position: relative; 
-    width: 500px;
-}
-
 #searchoption {
-    width: 60px;
-    position: relative;
+    margin-bottom: 4px;
+}
+#seachbox {
+    border: 2px solid #66ffa6;
+}
 
+#searchselect {
+    overflow: visible;
+    border: 2px solid #fff;
+    border-radius: 7px;
+    outline: none;
 }
 
 select{
