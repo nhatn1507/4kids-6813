@@ -80,7 +80,7 @@ function initMap() {
   '<p><b>Price: $$ </b> </p>'+
   '<p><b>Distance: </b> 0.3 mi'+
   '<br></br>'+
-  '<a href="restaurants/peppersky/PepperSky.html" class="btn btn-primary">See More</a>'
+  '<a href="restaurants/peppersky/overview.html" class="btn btn-primary">See More</a>'
   '</div>'+
   '</div>';
 
