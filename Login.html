@@ -26,66 +26,92 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css" integrity="sha256-D3+gw6JE4hEJ9pnCs+BglSfZ2yG5gF+JGdPJ/v183fo=" crossorigin="anonymous" />
 
-    <!-- MAIN CSS -->    
+    <!-- MAIN CSS -->
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
     <link rel="stylesheet" href="login.css">
     <link href="https://fonts.googleapis.com/css?family=Nobile" rel="stylesheet">
 </head>
-    
+<div id="result"></div>
+
+<script>
+var email_password_dict = {}
+var email_meta_info_dict = {}
+var test_string = ""
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    test_string =
+    this.responseText;
+
+  }
+};
+xhttp.open("GET", "login_info.txt", true);
+xhttp.send();
+
+
+function login(){
+  username = document.getElementById("email").value;
+  console.log(username);
+  console.log(test_string)
+}
+
+
+</script>
+
 <body>
     <div id="container">
         <div id="header"> VegEatable </div>
-        
-        
+
+
         <div id="left" style="height: 90vh; padding: 10% 0;">
             <div id="innerleft">
-                <div style="margin: 0 auto; max-width: 300px; "> 
+                <div style="margin: 0 auto; max-width: 300px; ">
                     <div style="font-size: 20px; padding: 0 5px; text-shadow: 0 0 2px #66ffa5; color:white;"> Log In </div>
                     <div style="position:relative; left:15%; bottom: 0; font-size: 12px; padding-bottom: 5px; color:white; text-shadow: 0 0 2px #66ffa5;"> <i> Existing customer</i></div>
                 </div>
-                
-                
+
+
                 <div style="margin: 0 auto; max-width: 300px; padding:20px 0;"> <input type="email" class="form-control" placeholder="Email" id="email"> </div>
-                
+
                 <div style="margin: 0 auto; max-width: 300px;"> <input type="password" class="form-control" placeholder="Password" id="pass"> </div>
-                
+
                 <div style="margin: 0 auto; max-width: 300px;">  <a href="#" style="float:right; margin: 5px 0; color:white;"> <strong> <u>Forgot password? </u> </strong> </a>  </div>
 
                 <br>
-                <div style="width: 60%; max-width: 200px; margin: 20px auto;"> <button type="submit" class="btn btn-block" style="background-color: #66ffa5; clear: both; "><b>Log In </b> </button> </div>
+                <div style="width: 60%; max-width: 200px; margin: 20px auto;"> <button type="submit" class="btn btn-block" style="background-color: #66ffa5; clear: both;" onclick="login()"><b>Log In </b> </button> </div>
             </div>
         </div>
-        
-        
+
+
         <div id="right" style="height: 90vh; padding: 10% 0;">
             <div id="innerright">
-                <div style="margin: 0 auto; max-width: 300px; "> 
+                <div style="margin: 0 auto; max-width: 300px; ">
                     <div style="font-size: 20px; padding: 0 5px; text-shadow: 0 0 3px #8559da; color:white;"> Sign Up </div>
                     <div style="position:relative; left:15%; font-size: 12px; padding-bottom: 5px; color:white; text-shadow: 0 0 3px  #8559da;"> <i> New to</i> <b> VegEatable</b></div>
                 </div>
-                
+
                 <div class='userinput' style="overflow:auto;">
                     <div  style="float: left; width: 50%; padding-right: 5px;"> <input type="text" class="form-control" id="first" placeholder="Given Name"> </div>
                     <div style="float: left; width: 50%; padding-left: 5px;"> <input type="text" class="form-control" id="last" placeholder="Family Name"> </div>
                 </div>
 
-                
-                
+
+
                 <div class='userinput'> <input type="email" class="form-control" placeholder="Email" id="email2"> </div>
-                
+
                 <div class='userinput'> <input type="password" class="form-control" placeholder="Password" id="pass2"> </div>
-                
+
 
                 <div class="userinput"> <input type="text" class="form-control" placeholder="Zip Code" id="zip"> </div>
-                
+
 
                 <div style="width: 60%; max-width: 200px; margin: 20px auto;"> <button type="submit" class="btn btn-block" style="color: white; background-color: #8559da; clear: both; "><b>Sign Up </b> </button> </div>
             </div>
         </div>
-        
-        
-        
-        
+
+
+
+
     </div>
-    
+
 </body>
