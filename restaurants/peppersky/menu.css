@@ -1,53 +1,88 @@
-#PepperSky {
-  text-align: center;
-  margin-top: 20px;
+/*GENERAL CSS*/
+
+* {
+
+font-family: 'Nobile', sans-serif;
 }
 
-#Tabs {
-  margin-top: auto;
+
+
+#left, #right {
+  float: left ;
+  width: 50% ;
 }
 
-body {
-  /*background-color: #A9A9A9;*/
+#innerleft, #innerright {
+    padding: 40px;
 }
 
-/* Style the tab buttons */
-.tablink {
-    background-color: #555;
-    color: black;
+
+#header {
+  text-align: center ;
+font-family: 'EB Garamond', serif;
+    background-color: #512da8;
+    color: white;
+    font-size: 40px;
+    letter-spacing: 0.3em;
+    height: 2em;
+}
+
+
+/*THE NAVIGATION BAR*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+     
+}
+
+li {
+    float: right;
+}
+
+li a {
+    cursor:text;
+    background-color: #333;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+}
+
+li a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+    color: white;
+}
+li a:hover:not(.active) {
+    background-color: #111;
+    color: white;
+}
+
+.active {
+    background-color: white;
+    
+}
+
+
+/*TITLES - ABout us, contact us*/
+div.title {
+    text-align: center;
+    padding: 5% 0;
+    font-size: 20px;
+
+}
+
+#name {
     float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 33%;
-    margin-top: 20px;
+    letter-spacing: 10px;
+
+    font-style: italic;
+    color: #00b248;
+    font-size: 30px;
+    letter-spacing: 0.3em;
 }
-
-/* Change background color of buttons on hover */
-.tablink:hover {
-    background-color: #777;
-}
-
-/* Set default styles for tab content */
-.tabcontent {
-    color: black;
-    display: none;
-    padding: 50px;
-    margin-top: 60px;
-
-}
-
-#PadthaiImg {
-  margin-top: 30px;
-}
-
-#PadthaiThings {
-  font-size: 16px;
-}
-
-/* Style each tab content individually */
 
 #myInput {
     background-image: url('searchicon.png'); /* Add a search icon to input */
@@ -63,8 +98,9 @@ body {
 #myUL {
     /* Remove default list styling */
     list-style-type: none;
-    padding: 0;
+    /*padding: 0;*/
     margin: 0;
+    padding-left: 0pt;
 }
 
 #myUL li a {
@@ -76,6 +112,8 @@ body {
     font-size: 18px; /* Increase the font-size */
     color: black; /* Add a black text color */
     display: block; /* Make it into a block element to fill the whole list */
+    align-items: left;
+    
 }
 
 #myUL li a.header {
@@ -85,22 +123,4 @@ body {
 
 #myUL li a:hover:not(.header) {
     background-color: #eee; /* Add a hover effect to all links, except for headers */
-}
-
-
-.fa.fa-star, .fa.fa-star-half-o, .fa.fa-star-o  {
-    color: orange;
-
-}
-
-/* ====== media ====== */
-.media {margin:5px;}
-.media, .bd {overflow:hidden; _overflow:visible; zoom:1;}
-.media .img {float:left; margin-right: 10px;}
-.media .img img{display:block;}
-.media .imgExt{float:right; margin-left: 10px;}
-
-
-select{
-  font-family: FontAwesome,Material Icons, Ionicons,  sans-serif;
 }
