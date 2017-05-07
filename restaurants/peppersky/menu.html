@@ -26,71 +26,51 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css" integrity="sha256-D3+gw6JE4hEJ9pnCs+BglSfZ2yG5gF+JGdPJ/v183fo=" crossorigin="anonymous" />
 
-    <!-- CSS -->    
+    <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Nobile" rel="stylesheet">
-    
-    
-    
-    
-    <!-- MAIN CSS  FILE-->    
+
+
+
+
+    <!-- MAIN CSS  FILE-->
     <link rel="stylesheet" href="menu.css">
 
+    <!-- MAIN JS FILE-->
+    <script src="menu.js"></script>
 
-    <script type="text/javascript">
-        
-        function myFunction() {
-            // Declare variables
-            var input, filter, ul, li, a, i;
-            input = document.getElementById('myInput');
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("myUL");
-            li = ul.getElementsByTagName('li');
-
-            // Loop through all list items, and hide those who don't match the search query
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-        }
-    </script>
 </head>
-    
+
 <body>
     <div id="container">
-        
-        
-        
+
+
+
         <div id="header"> VegEatable </div>
-        
-        
-        
+
+
+
         <ul>
       <li><a href="menu.html" style="background-color: #00e676;">Menu</a></li>
       <li><a href="review.html">Review</a></li>
       <li ><a href="overview.html" >Overview</a></li>
-            
+
       <li style="float:left;" id = "name"><a class="active">PepperSky</a></li>
     </ul>
-        
-        
-        
+
+
+
         <div id="left" style="height: 90vh; padding: auto 0;">
             <div class='title'> Our Menu </div>
             <div id="innerleft">
-                <div style="margin: 0 auto; max-width: 300px; "> 
+                <div style="margin: 0 auto; max-width: 300px; ">
                     <div id="Menu" class="tabcontent">
-                        
+
                         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Menu search">
                         <ul id="myUL">
-
-                            <li><a href="padthai.html">Pad Thai $8.95</a></li>
-                            <li><a href="padthai.html">Potato Puffs $5.95</a></li>
+                            <li><a class="menulink" onclick="openMenu('padthai', this, '#F0F8FF')">Pad Thai $8.95</a></li>
+                            <li><a class="menulink" onclick="openMenu('potatopuffs', this, '#F0F8FF')">Potato Puffs $5.95</a></li>
                             <li><a href="padthai.html">Spring Rolls $6.50</a></li>
                             <li><a href="padthai.html">Scallion Pancake $5.95</a></li>
                             <li><a href="padthai.html">Fresh Rolls $6.95</a></li>
@@ -101,19 +81,24 @@
                 </div>
             </div>
         </div>
-        
-        
+
+
         <div id="right" style="height: 90vh; padding: auto 0;">
             <div class='title'> Ingredients </div>
             <div id="innerright">
-                <div style="margin: 0 auto; max-width: 300px; "> 
-                   CONTENT HERE
+                <div style="margin: 0 auto; max-width: 500px; " class="menucontent" id="padthai">
+                      <img src="padthai.png" alt="Padthai" id = "PadthaiImg" style="width:100%;height:auto;">
+                      <br></br>
+                      <p style="font-size: 18px">Noodles, Garlic, Eggs, Coffee, Soy Sauce, Lime Juice, Sugar, Fish Sauce, Green Onions, Cilantro, Pepper Flakes</p>
                 </div>
-                
-          
+                <div style="margin: 0 auto; max-width: 500px; " class="menucontent" id="potatopuffs">
+                      <img src="potatopuffs.jpg" alt="Potato Puffs" id = "PotatopuffsImg" style="width:100%;height:auto;">
+                      <br></br>
+                      <p style="font-size: 18px">Noodles, Garlic, Eggs, Coffee, Soy Sauce, Lime Juice, Sugar, Fish Sauce, Green Onions, Cilantro, Pepper Flakes</p>
+                </div>
             </div>
         </div>
-        
+
     </div>
-    
+
 </body>
