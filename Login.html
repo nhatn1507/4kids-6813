@@ -34,7 +34,7 @@
 <div id="result"></div>
 
 <script>
-//localStorage.setItem("email_password_dict", JSON.stringify({}));
+localStorage.setItem("email_password_dict", JSON.stringify({}));
 localStorage.setItem("email_meta_info_dict", JSON.stringify({}));
 var email_password_dict = {}
 var email_meta_info_dict = {}
@@ -45,7 +45,7 @@ if (typeof(Storage) !== "undefined") {
     email_password_dict = JSON.parse(localStorage.getItem("email_password_dict"));
     if (email_password_dict == null){email_password_dict = {}};
     email_meta_info_dict = JSON.parse(localStorage.getItem("email_password_dict"));
-    if (email_meta_info_dict == null){email_password_dict = {}};
+    if (email_meta_info_dict == null){email_meta_info_dict = {}};
 
 
 } else {
