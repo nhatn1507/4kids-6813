@@ -98,7 +98,7 @@ div.title {
 #myUL {
     /* Remove default list styling */
     list-style-type: none;
-    padding: 0;
+    /*padding: 0;*/
     margin: 0;
     padding-left: 0pt;
 }
