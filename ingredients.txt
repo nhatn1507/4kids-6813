@@ -23,6 +23,10 @@ Review:
 User 1: "My favorite flavors so far: Burnt caramel B3 Green Tea/Earl Grey Vanilla Honey" (5/5)
 User 2: "Decadent, super helpful friendly staff, and tons of options!" (5/5)
 User 3: "The flavor combos this place comes up with are quirky, yet delightful." (5/5)
+User 4: "I usually go for the classic flavors like vanilla, or chocolate, or strawberry; basically single flavors. But the B3 (brownies and something else) is to die for! I also like that they have different serving sizes, starting from a "microscoop". Makes you feel better about the calories, but hey, who's counting when B3 is involved!" (5/5)
+User 5: "The best ice cream in the Boston area and, according to the New York Times, in the country. Flavors vary from day to day, so be sure to check on line. They will always have classic flavors available, but you really ought to check out their amazing experimental concoctions!" (5/5)
+User 6: "There always seems to be a line here but it moves quick. The employees are friendly and attentive even though they are always busy! You can try a couple of flavors before deciding what you want. The B3 and Roxy Puddington are sweet!" (5/5)
+User 7: "This is simply the best ice cream you will find almost anywhere.  Thick, very rich, creamy.  The most outlandish flavors you have heard of and a daily rotating menu.  Expect a wait most times, even in winter as they are that popular.  It comes down to a team that love ice cream, the best quality ingredients, and a passion to be on the forefront.  And all that comes through in the end product." (5/5)
 
 
 Menu:
@@ -47,13 +51,22 @@ Review:
 User 1: "Their hot huarache was pretty spicy! And this comes from someone who regularly enjoys spicier food in Boston. Prices were reasonable, quantity is good, and their traditional menu is very tasty. The mole sauce was so full bodied and flavorful." (4/5)
 User 2: "Honostly really good food and discounts for student . Good food and cheap. Always i am there eating new things." (4/5) 
 User 3: "Outstanding chiles rellenos.  The flan is great too.  It's true, you wouldn't come here for the atmosphere, but the food is delicious and pretty cheap." (4/5)
+User 4: "They describe themselves as Mexican comfort food, and that is accurate. It's not super amazing, but pretty tasty and reasonably priced. Very popular place among MIT students." (4/5)
+User 5: "Best Mexican food in the area as far as I know as a very white person." (4/5)
+User 6: "I've been ordering from Beantown since they first opened a few years ago. When I can I'll go into the restaurant, I love getting their tostada plates or nachos. Ordering online, I like to get the torta, and I'm glad they have so many options for filling, I get lengua, because it reminds me of home."  (4/5)
+User 7: "The breakfast looked delicious. Alas, my tacos were not great." (4/5)
 
 
 Menu:
 
 Veggie Burrito - tortillas, onion, cumin, chili powder, red bell, carrot, black beans, salsa, cheese, sour cream, cilantro
-Chimi Changa - tortillas, onion, cumin, chili powder, red bell, carrot, black beans, salsa, cheese, sour cream, cilantro, deep fried
+Veggie Chimi Changa - tortillas, onion, cumin, chili powder, red bell, carrot, black beans, salsa, cheese, sour cream, cilantro, deep fried
 Quesadilla - tortillas, onion, cheese, pepper, vegetable oil, fajita seasoning
+Veggie Taco - taco shell, sour cream, cheese, salsa, black beans
+Veggie Omelet - Tomato, Onion, Bell Pepper. Served with home fries and toast.
+Mexico Omelet - Onion, Tomato, Serrano Pepper. Served with home fries and toast.
+
+
 
 Mary Chung:
 
@@ -68,15 +81,49 @@ Review:
 User 1:	"Extremely flavorful food, great service." (4.0/5.0)
 User 2: "Dun noodles with vegetables are the best for a delicious yet affordable price." (4.0/5.0)
 User 3:	"The General Gau and Dry Cooked Sliced Tofu are great as well." (4.0/5.0)
+User 4: "Nobody else cuts the chicken in the Hainan style like they do. It reminds me of eating chicken in Singapore. Cash only. Real good. Real fresh. Best egg drop soup I've had." (4/5)
+User 5: "We've been coming here for 30 years. It is always delicious!" (4/5)
+User 6: "A reliably tasty, inexpensive option. Pretty relaxed, rarely loud or rowdy, and we've always had delightfully friendly service." (4/5)
+User 7: "Simply the best offering in Cambridge. Extremely flavorful food, great service." (4/5)
 
 Menu:
 
 Egg Drop - eggs, tomatoes, water, salt, pepper
 Savory tomatoes with eggs - tomatoes, eggs, salt, soy sauce, green onions
 Stir fried tofu - vegetable oil, tofu, onion, garlic, spinach, pepper, noodle, carrot
+Veggie Dumplings - spinach, flour, tofu, oil, salt, pepper, sugar
+Veggie Buns - spinach, flour, tofu, oil, salt, pepper, sugar
 
 
 
+Veggie Galaxy:
+
+Overview: 
+Description: Imaginative twist on an old-school diner specializing in from-scratch vegan & vegetarian options.
+Operating Hours: 9AM -11PM
+Review: 5.0
+Price: $
+
+Review:
+
+User 1: "This is the best restaurant I have ever been to in my life. With its diverse yet classic menu, Veggie Galaxy takes the complexities of vegan dining and simplifies it into delicious and unique comfort food. Veggie Galaxy's kitchen is nut-free, which makes their establishment safe for people with allergies, like myself. Veggie Galaxy is so amazing that I look for flights to Boston during my free time, just for the hopes of returning to the establishment once again. I recommend the stuffed french toast, however, everything is delicious. My only complaint is that this great restaurant is not franchised." (5/5)
+User 2: "First impression is a funky old-fashioned dinner. My server Alex greeted me cheerfully. I was craving a good vegan breakfast sandwich and that's exactly what I got! Tofu scramble with the house made cheddar cheese along side gravy potatoes. The food was such a great vegan treat! The food is homemade and made with love." (5/5)
+
+User 3: "100% vegetarian - you will not find any meat products in here. You can choose between vegan and veggie options so that is also quite accommodating. The place is cute, tho it is pretty much a diner. Two things i liked were the abundance of coat-hangers and that breakfast is served all day. However, 4 stars because it was a little pricey for a diner and the flavors were good but not excellent - maybe it was the caramelized onions in my omelette." (5/5)
+User 4: "LOVE THIS PLACE!!! Awesome food in a diner style. vegetarian food, REALLY GREAT alternatives to traditional meat entrees. Amazing deserts. Really fun, unique staff members. This place is AWESOME. If you want a cool, funky, pure Cambridge experience THIS IS THE PLACE TO GO. Going here supports a small, local, independently owned business " (5/5)
+User 5: "What can I say? I just adore this place. I work in the area so this is a go to about once every couple of weeks. The food never disappoints and check out the dessert case in the front when you walk in! Feels like a retro old school diner too! Super nice staff and an awesome selection on the menu — what more could you ask for? :-)" (5/5)
+User 6: "Veggie Galaxy is the best. The staff is excellent, the drinks are great and the food is delicious.  This place is comfort food done good, with some of my favorites being loaded mac and cheese (honestly the vegan mac is better!), fried pickles, and the FoMu milkshakes. Get Dad's shake, malted, and thank me later" (5/5)
+User 7: "Great Diner Vibe in Cambridge. Near Metro Stop. Nice service, broad menu of Vegetarian options that even a non Vegetarian such as myself truly enjoyed! I didn't take part in any Libations but the offering looked enticing" (5/5)
+
+
+Menu:
+
+Great Galaxy - Hash Brown Potatoes, Over Easy Egg, Tempeh Bacon, Cheddar Cheese, Baby Arugula, Roasted Garlic Mayo, on a Griddled Bun
+Stuffed - Vanilla Vegan Cream Cheese, topped with Caramelized Banana Butter, Strawberry Sauce & Maple Syrup 
+Traditional - Farmer's Table bread with Caramelized Banana Butter & Maple Syrup
+The Club - Grilled Tempeh Bacon, Smoked Tofu, Fresh Tomato, Romaine, Raw Red Onion, Basil Pesto & Roasted Garlic Mayo
+Reuben - Grilled Shaved Corned-Beef Seitan, Green Cabbage ‘Kraut, Swiss Cheese, House-made Thousand Island Dressing
+Rachel - Grilled Shaved Corned-Beef Seitan, Green Cabbage Slaw, Swiss Cheese, House-made Thousand Island Dressing
 
 
 
