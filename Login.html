@@ -61,11 +61,11 @@ function login(){
       window.location = "home.html"
     }
     else{
-      window.alert("Password/Username is wrong!");
+      window.alert("Either your password or username is incorrect!");
     }
   }
   else{
-    window.alert("Password/Username is wrong!");
+    window.alert("Either your password or username is incorrect!");
   }
 
 }
@@ -79,34 +79,35 @@ function signup(){
 
   if (username.length > 0 && password.length > 0 && first_name.length > 0 && last_name.length > 0 && zip_code.length > 0){
     if (username in email_password_dict){
-      window.alert("Email already has account");
+      window.alert("There's already an account associated with " + username);
     }
     else{
       email_password_dict[username] = password
       email_meta_info_dict[username] = {"first_name":first_name, "last_name":last_name, "zip_code":zip_code}
       localStorage.setItem("email_password_dict", JSON.stringify(email_password_dict));
       localStorage.setItem("email_meta_info_dict", JSON.stringify(email_meta_info_dict));
-      window.alert("Signup Successful");
+      window.alert("Successfully created an account for " + username);
       document.getElementById("email2").value = "";
       document.getElementById("pass2").value = "";
       document.getElementById("first").value = "";
       document.getElementById("last").value = "";
       document.getElementById("zip").value = "";
+        
     }
   }
   else{
-    window.alert("Fill out all fields!")
+    window.alert("Don't forget to fill out all the fields!")
   }
 }
 
 function password_forgot(){
-  var username = prompt("Pretend that we sent you an email and that you use that to reset the password. But this is pretty hard. Instead, write your email.")
+  var username = prompt("Type in your email. Your password will be sent to your inbox.");
   if (username != null && username != ""){
     if (username in email_password_dict){
-      window.alert("Your password is: " + email_password_dict[username].toString());
+      window.alert('Pretend that you see the below message in your email inbox:\n' + '"From VegEatable: You have recently requested a password reminder for your account at ' + username + ". Your password is: " + email_password_dict[username].toString()  + '"')  ;
     }
     else{
-      window.alert("Couldn't find email.")
+      window.alert("Could not find any account associated with " + username);
     }
   }
 }
@@ -153,13 +154,13 @@ function password_forgot(){
                 </div>
 
                 <div class='userinput' style="overflow:auto;">
-                    <div  style="float: left; width: 50%; padding-right: 5px;"> <input type="text" class="form-control" id="first" placeholder="Given Name"> </div>
+                    <div  style="float: left; width: 50%; padding-right: 5px;"> <input type="text" class="form-control" id="first" placeholder="Given Name" > </div>
                     <div style="float: left; width: 50%; padding-left: 5px;"> <input type="text" class="form-control" id="last" placeholder="Family Name"> </div>
                 </div>
 
 
 
-                <div class='userinput'> <input type="email" class="form-control" placeholder="Email" id="email2"> </div>
+                <div class='userinput'> <input type="email" class="form-control" placeholder="Email" id="email2" required> </div>
 
                 <div class='userinput'> <input type="password" class="form-control" placeholder="Password" id="pass2"> </div>
 
@@ -167,7 +168,7 @@ function password_forgot(){
                 <div class="userinput"> <input type="text" class="form-control" placeholder="Zip Code" id="zip"> </div>
 
 
-                <div style="width: 60%; max-width: 200px; margin: 20px auto;"> <button type="submit" class="btn btn-block" style="color: white; background-color: #8559da; clear: both; " onclick="signup()"><b>Sign Up </b> </button> </div>
+                <div style="width: 60%; max-width: 200px; margin: 20px auto;"> <button type="submit" class="btn btn-block" style="color: white; background-color: #8559da; clear: both; " onclick="signup()" id="signupsubmit"><b>Sign Up </b> </button> </div>
 
                 <div id="messages" style = "color:white;float: left; width: 50%; padding-right: 5px;"> </div>
             </div>
