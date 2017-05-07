@@ -13,7 +13,7 @@ font-family: 'Nobile', sans-serif;
 }
 
 #innerleft, #innerright {
-    padding: 40px;
+    padding: 20px;
 }
 
 
@@ -78,7 +78,7 @@ li a:hover:not(.active) {
 /*TITLES - ABout us, contact us*/
 div.title {
     text-align: center;
-    padding: 5% 0;
+    padding: 2% 0;
     font-size: 20px;
 
 }
