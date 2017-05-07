@@ -70,7 +70,9 @@ function login(){
 
 }
 
-function signup(){
+    
+function signup() {
+
   username = document.getElementById("email2").value;
   password = document.getElementById("pass2").value;
   first_name = document.getElementById("first").value;
@@ -152,25 +154,30 @@ function password_forgot(){
                     <div style="font-size: 20px; padding: 0 5px; text-shadow: 0 0 3px #8559da; color:white;"> Sign Up </div>
                     <div style="position:relative; left:15%; font-size: 12px; padding-bottom: 5px; color:white; text-shadow: 0 0 3px  #8559da;"> <i> New to</i> <b> VegEatable</b></div>
                 </div>
-
+                
+                
+                
+                <form action="javascript: signup();">
                 <div class='userinput' style="overflow:auto;">
-                    <div  style="float: left; width: 50%; padding-right: 5px;"> <input type="text" class="form-control" id="first" placeholder="Given Name" > </div>
-                    <div style="float: left; width: 50%; padding-left: 5px;"> <input type="text" class="form-control" id="last" placeholder="Family Name"> </div>
+                    
+                <div  style="float: left; width: 50%; padding-right: 5px;"> <input type="text" class="form-control" id="first" placeholder="Given Name" required> </div>
+                    
+                <div style="float: left; width: 50%; padding-left: 5px;"> <input type="text" class="form-control" id="last" placeholder="Family Name" required> </div>
+                    
                 </div>
 
 
 
                 <div class='userinput'> <input type="email" class="form-control" placeholder="Email" id="email2" required> </div>
 
-                <div class='userinput'> <input type="password" class="form-control" placeholder="Password" id="pass2"> </div>
+                <div class='userinput'> <input type="password" class="form-control" placeholder="Password" id="pass2" required> </div>
 
 
-                <div class="userinput"> <input type="text" class="form-control" placeholder="Zip Code" id="zip"> </div>
+                <div class="userinput"> <input type="text" class="form-control" placeholder="Zip Code" id="zip" required> </div>
 
 
-                <div style="width: 60%; max-width: 200px; margin: 20px auto;"> <button type="submit" class="btn btn-block" style="color: white; background-color: #8559da; clear: both; " onclick="signup()" id="signupsubmit"><b>Sign Up </b> </button> </div>
-
-                <div id="messages" style = "color:white;float: left; width: 50%; padding-right: 5px;"> </div>
+                <div style="width: 60%; max-width: 200px; margin: 20px auto;"> <input type="submit" class="btn btn-block" style="color: white; background-color: #8559da; clear: both; " value="Sign Up"> </div>
+                </form>
             </div>
         </div>
 
