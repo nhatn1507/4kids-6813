@@ -34,8 +34,8 @@
 <div id="result"></div>
 
 <script>
-localStorage.setItem("email_password_dict", JSON.stringify({}));
-localStorage.setItem("email_meta_info_dict", JSON.stringify({}));
+//localStorage.setItem("email_password_dict", JSON.stringify({}));
+//localStorage.setItem("email_meta_info_dict", JSON.stringify({}));
 var email_password_dict = {}
 var email_meta_info_dict = {}
 if (typeof(Storage) !== "undefined") {
@@ -58,6 +58,7 @@ function login(){
   password = document.getElementById("pass").value;
   if (username in email_password_dict){
     if (email_password_dict[username] == password){
+      sessionStorage.setItem("current_username", username.toString());
       window.location = "home.html"
     }
     else{
@@ -70,7 +71,7 @@ function login(){
 
 }
 
-    
+
 function signup() {
 
   username = document.getElementById("email2").value;
@@ -94,7 +95,7 @@ function signup() {
       document.getElementById("first").value = "";
       document.getElementById("last").value = "";
       document.getElementById("zip").value = "";
-        
+
     }
   }
   else{
@@ -154,16 +155,16 @@ function password_forgot(){
                     <div style="font-size: 20px; padding: 0 5px; text-shadow: 0 0 3px #8559da; color:white;"> Sign Up </div>
                     <div style="position:relative; left:15%; font-size: 12px; padding-bottom: 5px; color:white; text-shadow: 0 0 3px  #8559da;"> <i> New to</i> <b> VegEatable</b></div>
                 </div>
-                
-                
-                
+
+
+
                 <form action="javascript: signup();">
                 <div class='userinput' style="overflow:auto;">
-                    
+
                 <div  style="float: left; width: 50%; padding-right: 5px;"> <input type="text" class="form-control" id="first" placeholder="Given Name" required> </div>
-                    
+
                 <div style="float: left; width: 50%; padding-left: 5px;"> <input type="text" class="form-control" id="last" placeholder="Family Name" required> </div>
-                    
+
                 </div>
 
 

@@ -29,15 +29,6 @@
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="home.css">
 
-
-
-    <!-- MAIN JS -->
-    <script src="home.js"> </script>
-    <!-- THIS HAS TO COME AFTER HOME.JS FOR MAP TO DISPLAY-->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkJo9zT4oqrowzLBILa0AyjcFS8G83RE0&callback=initMap">
-    </script>
-
 </head>
 
 
@@ -45,55 +36,14 @@
 
     <div id="container">
         <div id="header" style=" cursor: pointer;"> VegEatable
+
         <a id="login" href="Login.html"> <b> Log In/Sign Up</b></a>
         </div>
-        <div id="left">
-            <div id="innerleft">
 
-                <div id="search">
-
-                    <div id="searchoption">
-                        <select id="searchselect" >
-                            <option id="restaurant" selected> &#xe8d1 R</option>
-                            <option id="food"> &#xe561 F</option>
-                            <option id="ingredient"> &#xf470 I</option>
-
-
-                        </select>
-                    </div>
-
-                    <div id="searchbox">
-                        <div class="btn-group">
-                            <div class="input-group">
-                                <input type="search" class="form-control" id="searchtext" placeholder="Seach Restaurant">
-
-                                <div class="input-group-btn">
-                                <button id="searchsubmit" class="btn btn-block" type="submit">
-                                <i class="glyphicon glyphicon-search"></i>
-                                </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div>
-        </div>
-        <div id="right">
-            <div id="innerright">
-
-
-                <div id="map"></div>
-
-            </div>
-        </div>
     </div>
 
 
 </body>
-
 <script>
 item = sessionStorage.getItem("current_username");
 if (item != null){
