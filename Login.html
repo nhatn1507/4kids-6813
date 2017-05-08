@@ -34,26 +34,87 @@
 <div id="result"></div>
 
 <script>
+//localStorage.setItem("email_password_dict", JSON.stringify({}));
+//localStorage.setItem("email_meta_info_dict", JSON.stringify({}));
 var email_password_dict = {}
 var email_meta_info_dict = {}
-var test_string = ""
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    test_string =
-    this.responseText;
+if (typeof(Storage) !== "undefined") {
+    // Store
 
-  }
-};
-xhttp.open("GET", "login_info.txt", true);
-xhttp.send();
+    // Retrieve
+    email_password_dict = JSON.parse(localStorage.getItem("email_password_dict"));
+    if (email_password_dict == null){email_password_dict = {}};
+    email_meta_info_dict = JSON.parse(localStorage.getItem("email_password_dict"));
+    if (email_meta_info_dict == null){email_meta_info_dict = {}};
+
+
+} else {
+    window.alert("Critical failure!");
+}
 
 
 function login(){
   username = document.getElementById("email").value;
-  console.log(username);
-  console.log(test_string)
+  password = document.getElementById("pass").value;
+  if (username in email_password_dict){
+    if (email_password_dict[username] == password){
+      sessionStorage.setItem("current_username", username.toString());
+      window.location = "home.html"
+    }
+    else{
+      window.alert("Either your password or username is incorrect!");
+    }
+  }
+  else{
+    window.alert("Either your password or username is incorrect!");
+  }
+
 }
+
+
+function signup() {
+
+  username = document.getElementById("email2").value;
+  password = document.getElementById("pass2").value;
+  first_name = document.getElementById("first").value;
+  last_name = document.getElementById("last").value;
+  zip_code = document.getElementById("zip").value;
+
+  if (username.length > 0 && password.length > 0 && first_name.length > 0 && last_name.length > 0 && zip_code.length > 0){
+    if (username in email_password_dict){
+      window.alert("There's already an account associated with " + username);
+    }
+    else{
+      email_password_dict[username] = password
+      email_meta_info_dict[username] = {"first_name":first_name, "last_name":last_name, "zip_code":zip_code}
+      localStorage.setItem("email_password_dict", JSON.stringify(email_password_dict));
+      localStorage.setItem("email_meta_info_dict", JSON.stringify(email_meta_info_dict));
+      window.alert("Successfully created an account for " + username);
+      document.getElementById("email2").value = "";
+      document.getElementById("pass2").value = "";
+      document.getElementById("first").value = "";
+      document.getElementById("last").value = "";
+      document.getElementById("zip").value = "";
+
+    }
+  }
+  else{
+    window.alert("Don't forget to fill out all the fields!")
+  }
+}
+
+function password_forgot(){
+  var username = prompt("Type in your email. Your password will be sent to your inbox.");
+  if (username != null && username != ""){
+    if (username in email_password_dict){
+      window.alert('Pretend that you see the below message in your email inbox:\n' + '"From VegEatable: You have recently requested a password reminder for your account at ' + username + ". Your password is: " + email_password_dict[username].toString()  + '"')  ;
+    }
+    else{
+      window.alert("Could not find any account associated with " + username);
+    }
+  }
+}
+
 
 
 </script>
@@ -61,7 +122,7 @@ function login(){
 <body>
 
     <div id="container">
-        
+
         <style>
         #hovertitle:hover { text-decoration: none; }
         </style>
@@ -80,7 +141,7 @@ function login(){
 
                 <div style="margin: 0 auto; max-width: 300px;"> <input type="password" class="form-control" placeholder="Password" id="pass"> </div>
 
-                <div style="margin: 0 auto; max-width: 300px;">  <a href="#" style="float:right; margin: 5px 0; color:white;"> <strong> <u>Forgot password? </u> </strong> </a>  </div>
+                <div style="margin: 0 auto; max-width: 300px;">  <a href="#" style="float:right; margin: 5px 0; color:white;" onclick = "password_forgot()"> <strong> <u>Forgot password? </u> </strong> </a>  </div>
 
                 <br>
                 <div style="width: 60%; max-width: 200px; margin: 20px auto;"> <button type="submit" class="btn btn-block" style="background-color: #66ffa5; clear: both;" onclick="login()"><b>Log In </b> </button> </div>
@@ -95,22 +156,29 @@ function login(){
                     <div style="position:relative; left:15%; font-size: 12px; padding-bottom: 5px; color:white; text-shadow: 0 0 3px  #8559da;"> <i> New to</i> <b> VegEatable</b></div>
                 </div>
 
+
+
+                <form action="javascript: signup();">
                 <div class='userinput' style="overflow:auto;">
-                    <div  style="float: left; width: 50%; padding-right: 5px;"> <input type="text" class="form-control" id="first" placeholder="Given Name"> </div>
-                    <div style="float: left; width: 50%; padding-left: 5px;"> <input type="text" class="form-control" id="last" placeholder="Family Name"> </div>
+
+                <div  style="float: left; width: 50%; padding-right: 5px;"> <input type="text" class="form-control" id="first" placeholder="Given Name" required> </div>
+
+                <div style="float: left; width: 50%; padding-left: 5px;"> <input type="text" class="form-control" id="last" placeholder="Family Name" required> </div>
+
                 </div>
 
 
 
-                <div class='userinput'> <input type="email" class="form-control" placeholder="Email" id="email2"> </div>
+                <div class='userinput'> <input type="email" class="form-control" placeholder="Email" id="email2" required> </div>
 
-                <div class='userinput'> <input type="password" class="form-control" placeholder="Password" id="pass2"> </div>
-
-
-                <div class="userinput"> <input type="text" class="form-control" placeholder="Zip Code" id="zip"> </div>
+                <div class='userinput'> <input type="password" class="form-control" placeholder="Password" id="pass2" required> </div>
 
 
-                <div style="width: 60%; max-width: 200px; margin: 20px auto;"> <button type="submit" class="btn btn-block" style="color: white; background-color: #8559da; clear: both; "><b>Sign Up </b> </button> </div>
+                <div class="userinput"> <input type="text" class="form-control" placeholder="Zip Code" id="zip" required> </div>
+
+
+                <div style="width: 60%; max-width: 200px; margin: 20px auto;"> <input type="submit" class="btn btn-block" style="color: white; background-color: #8559da; clear: both; " value="Sign Up"> </div>
+                </form>
             </div>
         </div>
 

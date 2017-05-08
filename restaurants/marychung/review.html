@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>VegEatable@Toscini's</title>
+
+    <!-- COMMON LIBRARIES -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- need this for arrow Glyphicon to display correctly -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+    crossorigin="anonymous"></script>
+
+
+    <!-- Use mobile-aware viewport -->
+    <meta name="viewport" content= "width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- ICONS LIBRARY -->
+    <script src="https://use.fontawesome.com/9f03d0cffe.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css" integrity="sha256-D3+gw6JE4hEJ9pnCs+BglSfZ2yG5gF+JGdPJ/v183fo=" crossorigin="anonymous" />
+
+    <!-- CSS -->    
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css?family=Nobile" rel="stylesheet">
+    
+    
+    <!-- MAIN JS FILE-->   
+    <script src="review.js"></script>
+    <!-- MAIN CSS  FILE-->    
+    <link rel="stylesheet" href="review.css">
+</head>
+    
+<body>
+    <div id="container">
+        <div id="header"> VegEatable </div>
+        <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="review.html" style="background-color: #00e676;">Review</a></li>
+        <li ><a href="overview.html" >Overview</a></li>
+
+        <li style="float:left;" id = "name"><a class="active">Mary Chung</a></li>
+        </ul> 
+       
+<div id="left" style="height: 90vh; padding: auto 0;">
+    <hr>
+<div class='title'> Leave a Review </div>
+    <div id="innerleft">
+    <div style="margin: 0 auto; ">         
+
+                        
+<hr>
+
+    <div class="media attribution">
+        <a href="#" class="img" >
+            <i class="fa fa-user" aria-hidden="true" style="font-size:3.5em; color:black; padding:0; margin:0;"></i>
+            <p style="padding:0; margin:0;">Username </p>
+        </a>
+
+    <div class="bd" style="padding-left: 20px; width: 100%;">
+        <div class="form-group">
+            <label for="textreview">
+                <p style="font-size: 1.5em; padding:0; margin: 0;"> Your Review </p>
+                
+                
+                
+                
+    <div class="btn-group" id="stargroup" style="font-size: 2em;">
+        <i id="onestar" class="btn fa fa-star-o leavereview" onmouseover='reviewMouseOver(1)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
+
+        <i id="twostar" class="btn fa fa-star-o leavereview" onmouseover='reviewMouseOver(2)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
+
+        <i id="threestar" class="btn  fa fa-star-o leavereview" onmouseover='reviewMouseOver(3)' onmouseout='reviewMouseOut()' aria-hidden="true"></i> 
+
+        <i id="fourstar" class="btn fa fa-star-o leavereview" onmouseover='reviewMouseOver(4)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
+
+        <i id="fivestar" class="btn  fa fa-star-o leavereview" onmouseover='reviewMouseOver(5)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
+    </div>
+                
+                
+            </label>
+            <textarea rows="10" class="form-control" id="textreview" placeholder="Help the restaurants do better by leaving feedback" > </textarea>
+            
+            
+<!--            TRIGGER MODAL WITH SUBMIT BUTTON-->
+            <button id="submitreview" type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal" style="float:right;" disabled>Submit</button>
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-md">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                  
+                <div style="padding: 10px; border-bottom: 1px solid #D3D3D3;">
+
+                  <h4 class="modal-title" style='float:left;'>Thank you!</h4>
+        
+                  <button type="button" class="close" data-dismiss="modal" >&times;</button>
+                </div>
+                  
+                <div class="modal-body">
+                  <p>Your feedback has been recorded. </p>
+                </div>
+                <div class="modal-footer" style="padding: 10px;">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+            
+        </div>
+    </div>
+
+    </div>
+    <hr>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div id="right" style="height: 90vh; padding: auto 0;">
+            <hr>
+            <div class='title'> 
+                
+                <div>Reviews for Mary Chung</div> 
+            
+    <p  style="font-size: 1em; position:relative; left: 40px;">
+        <span id="numreview"> by 6 reviewers </span >
+        <i class="fa fa-star" aria-hidden="true" ></i>
+        <i class="fa fa-star" aria-hidden="true" ></i>
+          <i class="fa fa-star" aria-hidden="true" ></i>
+
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+     </p>
+            
+            </div>
+            
+            
+
+            <div id="innerright">
+                <div style="margin: 0 auto; "> 
+
+            <hr>
+                    
+    <div id="usernewreview" class="media attribution" style="display:none;">
+        <a href="#" class="img">
+            <div id="usericon">
+                <i class="fa fa-user" aria-hidden="true" style=" color:black; padding:0; margin:0;"></i>
+            </div>
+        </a>
+        
+        <div style="padding-left: 6px;">
+            <p style="margin: 0; padding:0;">
+                <i id='1s' class="fa fa-star-o" aria-hidden="true"></i>
+                <i id='2s' class="fa fa-star-o" aria-hidden="true"></i>
+                 <i id='3s' class="fa fa-star-o" aria-hidden="true"></i>
+                <i id='4s' class="fa fa-star-o" aria-hidden="true"></i>
+                <i id='5s' class="fa fa-star-o" aria-hidden="true"></i>
+             </p>
+            <span id="newreview">  </span>
+        </div>
+    </div>
+
+                    
+    <div class="media attribution">
+        <a href="#" class="img">
+        <img src="assets/mark.png" alt="person1" style="width:60px;height:40px;"/>
+        </a>
+        <div style="padding-left: 6px;">
+            <p style="margin: 0; padding:0;">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                 <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+             </p>
+            Extremely flavorful food, great service.
+
+        </div>
+    </div>
+
+    <div class="media attribution">
+        <a href="#" class="img">
+        <img src="assets/person2.jpg" alt="person2" />
+        </a>
+        <div style="padding-left: 6px;">
+            <p style=" margin: 0; padding:0;">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+             </p>
+        Dun noodles with vegetables are the best for a delicious yet affordable price.
+        </div>
+    </div>
+
+    <div class="media attribution">
+        <a href="#" class="img">
+        <img src="assets/person3.jpg" alt="person3" />
+        </a>
+        <div style="padding-left: 6px;">
+            <p style=" margin: 0; padding:0;">
+                <i class="fa fa-star" aria-hidden="true" ></i>
+                <i class="fa fa-star" aria-hidden="true" ></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+             </p>
+        The General Gau and Dry Cooked Sliced Tofu are great as well.
+        </div>
+    </div>
+
+    <div class="media attribution">
+        <a href="#" class="img">
+        <img src="assets/person4.jpeg" alt="person4" />
+        </a>
+       <div style="padding-left: 6px;">
+            <p style=" margin: 0; padding:0;">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true" ></i>
+                <i class="fa fa-star" aria-hidden="true" ></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+             </p>
+        The flavor combos this place comes up with are quirky, yet delightful.
+        </div>
+    </div>
+
+
+
+<!--     Two extra reviews that are started as hidden, and a show more button -->
+    <div id="extraReview1" class="media attribution" style="display:none;">
+        <a href="#" class="img">
+        <img src="assets/person5.jpeg" alt="person5" />
+        </a>
+        <div style="padding-left: 6px;">
+            <p style="margin: 0; padding:0;">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true" ></i>
+                <i class="fa fa-star" aria-hidden="true" ></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+             </p>
+        Nobody else cuts the chicken in the Hainan style like they do. It reminds me of eating chicken in Singapore. Cash only. Real good. Real fresh. Best egg drop soup I've had.
+        </div>
+    </div>
+
+    <div id="extraReview2" class="media attribution" style="display:none;">
+        <a href="#" class="img">
+        <img src="assets/person6.jpeg" alt="person6" />
+        </a>
+       <div style="padding-left: 6px;">
+            <p style="margin: 0; padding:0;">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+             </p>
+        We've been coming here for 30 years. It is always delicious!
+        </div>
+    </div>
+        <div id="extraReview2" class="media attribution" style="display:none;">
+        <a href="#" class="img">
+        <img src="mike.png" alt="person6" />
+        </a>
+       <div style="padding-left: 6px;">
+            <p style="margin: 0; padding:0;">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+             </p>
+        A reliably tasty, inexpensive option. Pretty relaxed, rarely loud or rowdy, and we've always had delightfully friendly service.
+        </div>
+    </div>
+
+        <button id="showmore" type="button" class="btn btn-sm btn-block" style="margin-top: 20px; margin-bottom: 20px;">Show More...</button>
+
+</div>        
+                    
+                    
+                    
+                </div>
+                
+          
+            </div>
+        </div>
+ 
+    
+    
+    
+</body>

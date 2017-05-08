@@ -26,18 +26,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css" integrity="sha256-D3+gw6JE4hEJ9pnCs+BglSfZ2yG5gF+JGdPJ/v183fo=" crossorigin="anonymous" />
 
-    <!-- CSS -->    
+    <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Nobile" rel="stylesheet">
-    
-    
-    <!-- MAIN JS FILE-->   
-    <script src="review.js"></script>
-    <!-- MAIN CSS  FILE-->    
-    <link rel="stylesheet" href="review.css">
+
+
+    <!-- MAIN JS FILE-->
+    <script src="../../js/review.js"></script>
+    <!-- MAIN CSS  FILE-->
+    <link rel="stylesheet" href="../../css/review.css">
 </head>
-    
+
 <body>
     <div id="container">
         
@@ -52,15 +52,15 @@
         <li ><a href="overview.html" >Overview</a></li>
 
         <li style="float:left;" id = "name"><a class="active">PepperSky</a></li>
-        </ul> 
-       
+        </ul>
+
 <div id="left" style="height: 90vh; padding: auto 0;">
     <hr>
 <div class='title'> Leave a Review </div>
     <div id="innerleft">
-    <div style="margin: 0 auto; ">         
+    <div style="margin: 0 auto; ">
 
-                        
+
 <hr>
 
     <div class="media attribution">
@@ -73,27 +73,27 @@
         <div class="form-group">
             <label for="textreview">
                 <p style="font-size: 1.5em; padding:0; margin: 0;"> Your Review </p>
-                
-                
-                
-                
+
+
+
+
     <div class="btn-group" id="stargroup" style="font-size: 2em;">
         <i id="onestar" class="btn fa fa-star-o leavereview" onmouseover='reviewMouseOver(1)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
 
         <i id="twostar" class="btn fa fa-star-o leavereview" onmouseover='reviewMouseOver(2)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
 
-        <i id="threestar" class="btn  fa fa-star-o leavereview" onmouseover='reviewMouseOver(3)' onmouseout='reviewMouseOut()' aria-hidden="true"></i> 
+        <i id="threestar" class="btn  fa fa-star-o leavereview" onmouseover='reviewMouseOver(3)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
 
         <i id="fourstar" class="btn fa fa-star-o leavereview" onmouseover='reviewMouseOver(4)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
 
         <i id="fivestar" class="btn  fa fa-star-o leavereview" onmouseover='reviewMouseOver(5)' onmouseout='reviewMouseOut()' aria-hidden="true"></i>
     </div>
-                
-                
+
+
             </label>
             <textarea rows="10" class="form-control" id="textreview" placeholder="Help the restaurants do better by leaving feedback" > </textarea>
-            
-            
+
+
 <!--            TRIGGER MODAL WITH SUBMIT BUTTON-->
             <button id="submitreview" type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal" style="float:right;" disabled>Submit</button>
 
@@ -104,14 +104,14 @@
 
               <!-- Modal content-->
               <div class="modal-content">
-                  
+
                 <div style="padding: 10px; border-bottom: 1px solid #D3D3D3;">
 
                   <h4 class="modal-title" style='float:left;'>Thank you!</h4>
-        
+
                   <button type="button" class="close" data-dismiss="modal" >&times;</button>
                 </div>
-                  
+
                 <div class="modal-body">
                   <p>Your feedback has been recorded. </p>
                 </div>
@@ -122,25 +122,25 @@
 
             </div>
           </div>
-            
+
         </div>
     </div>
 
     </div>
     <hr>
-                    
-                    
-                    
+
+
+
                 </div>
             </div>
         </div>
-        
+
         <div id="right" style="height: 90vh; padding: auto 0;">
             <hr>
-            <div class='title'> 
-                
-                <div>Reviews for PepperSky</div> 
-            
+            <div class='title'>
+
+                <div>Reviews for PepperSky</div>
+
     <p  style="font-size: 1em; position:relative; left: 40px;">
         <span id="numreview"> by 6 reviewers </span >
         <i class="fa fa-star" aria-hidden="true" ></i>
@@ -150,23 +150,23 @@
         <i class="fa fa-star-o" aria-hidden="true"></i>
         <i class="fa fa-star-o" aria-hidden="true"></i>
      </p>
-            
+
             </div>
-            
-            
+
+
 
             <div id="innerright">
-                <div style="margin: 0 auto; "> 
+                <div style="margin: 0 auto; ">
 
             <hr>
-                    
+
     <div id="usernewreview" class="media attribution" style="display:none;">
         <a href="#" class="img">
             <div id="usericon">
                 <i class="fa fa-user" aria-hidden="true" style=" color:black; padding:0; margin:0;"></i>
             </div>
         </a>
-        
+
         <div style="padding-left: 6px;">
             <p style="margin: 0; padding:0;">
                 <i id='1s' class="fa fa-star-o" aria-hidden="true"></i>
@@ -179,7 +179,7 @@
         </div>
     </div>
 
-                    
+
     <div class="media attribution">
         <a href="#" class="img">
         <img src="assets/person1.jpg" alt="person1" />
@@ -282,17 +282,17 @@
 
         <button id="showmore" type="button" class="btn btn-sm btn-block" style="margin-top: 20px; margin-bottom: 20px;">Show More...</button>
 
-</div>        
-                    
-                    
-                    
+</div>
+
+
+
                 </div>
-                
-          
+
+
             </div>
         </div>
- 
-    
-    
-    
+
+
+
+
 </body>

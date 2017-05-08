@@ -45,7 +45,6 @@
 
     <div id="container">
         <div id="header" style=" cursor: pointer;"> VegEatable
-
         <a id="login" href="Login.html"> <b> Log In/Sign Up</b></a>
         </div>
         <div id="left">
@@ -94,4 +93,15 @@
 
 
 </body>
+
+<script>
+item = sessionStorage.getItem("current_username");
+if (item != null){
+  console.log(item);
+  var login = document.getElementById("login");
+  console.log(login);
+  login.href = "profile.html"
+  login.innerHTML = "Welcome " + item.toString()
+}
+</script>
 </html>
