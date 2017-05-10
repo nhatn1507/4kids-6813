@@ -19,12 +19,12 @@ body {
 #header {
     text-align: center ;
     font-family: 'EB Garamond', serif;
-    background-color: #140078;
+    background-color: #512da8;
     color: white;
     font-size: 40px;
     letter-spacing: 0.3em;
     padding: auto 0;
-    height: 10vh;
+    height: 70px;
     position: relative;
 }
 

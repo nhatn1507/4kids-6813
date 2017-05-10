@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nobile" rel="stylesheet">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="profile.css">
 
 </head>
 
@@ -35,10 +35,24 @@
 <body>
 
     <div id="container">
-        <div id="header" style=" cursor: pointer;"> VegEatable
-
+        <div id="header" style=" cursor: pointer;">
+        <a href='home.html' id='hovertitle'> <div id="header" >    VegEatable</div></a>
         <a id="login" href="Login.html"> <b> Log In/Sign Up</b></a>
         </div>
+
+        <div id = "profile"> Profile </div>
+        <div id = "profile_pic"> Your Profile Photo <a href="#" style=" margin: 5px 0; color:blue;" onclick = "password_forgot()"> <strong> <u>(Add/Edit) </u> </strong> </a></div>
+        <div id = "picture"> ACTUAL PICTURE (REPLACE LATER) </div>
+        <div id = "first_name">First Name</div>
+        <label for="first_input">First Name</label>
+        <div id = "first_input" style=" max-width: 300px;"> <input type="password" class="form-control" placeholder="Mark, etc." id="pass"> </div>
+        <label for="second_input">Last Name</label>
+        <div id = "second_input" style=" max-width: 300px;"> <input type="password" class="form-control" placeholder="Wang, etc." id="pass"> </div>
+        <label for="nickname_input">Nickname</label>
+        <div id = "nickname_input" style=" max-width: 300px;"> <input type="password" class="form-control" placeholder="Wangler, etc." id="pass"> </div>
+        <label for="password_input">New Password</label>
+        <div id = "password_input" style="width: 60%; max-width: 200px; "> <button type="submit" class="btn btn-block" style="background-color: #66ffa5; clear: both;" onclick="login()"><b>Change Password </b> </button> </div>
+
 
     </div>
 

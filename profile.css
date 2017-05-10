@@ -44,46 +44,8 @@
     color: black;
 }
 
-#map {
-  height: 90vh;
-  margin: auto;
-  text-align: center;
-  background-color: antiquewhite;
-}
-
-
-
-.fa.fa-star, .fa.fa-star-half-o, .fa.fa-star-o  {
-    color: orange;
-}
-
-#innerleft {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-    font-family: : 'Nobile', sans-serif;
-}
-
-
-#search {
-    width: 70%;
-    margin: 0 auto;
-
-}
-
-#seachbox {
-    border: 2px solid #66ffa6;
-}
-
 
 
 select{
   font-family: FontAwesome,Material Icons, Ionicons,  sans-serif;
 }
-
-
-
-.list-group-item {
-    display: none;
-}
-
