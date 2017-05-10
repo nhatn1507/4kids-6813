@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
- 
+
     //SHOW MORE/SHOW LESS in review
     var showmoreClicked = true;
     $("#showmore").click(function() {
@@ -23,7 +23,7 @@ $(document).ready(function () {
     $(".leavereview").click(function() {
         clickedstar = true;
         $("#textreview").keyup();
-        
+
         var ratings = ["onestar", "twostar", "threestar", "fourstar", "fivestar"];
         num_stars = ratings.indexOf(this.id) + 1;
         for (rating = 0; rating<=4; rating++) {
@@ -36,38 +36,38 @@ $(document).ready(function () {
                 $(star).addClass("fa fa-star-o");
             }
         }
-        
+
     });
-    
+
     //only allow submit button
     $("#textreview").keyup(function() {
-        if (($("#textreview").val().trim()!=='') && clickedstar) {  
+        if (($("#textreview").val().trim()!=='') && clickedstar) {
             $("#submitreview").prop('disabled', false); // Disables visually + functionally
         } else {
             $("#submitreview").prop('disabled', true);
         }
     })
-    
-    
+
+
     //LOCALSTORAGE exist - restore review
-    if (localStorage.hadreview === "true") {
+    if (localStorage.marychunghadreview === "true") {
         $("#numreview").text('by 7 reviewers');
-        
-        $("#textreview").val(localStorage.review);
-        
+
+        $("#textreview").val(localStorage.marychungreview);
+
         var userreview = $("#textreview").val();
         $("#newreview").text(userreview);
-        
+
         var ratings = ["1s", "2s", "3s", "4s", "5s"];
         var ratings2 = ["onestar", "twostar", "threestar", "fourstar", "fivestar"];
-        
-        
-        var rated = Number(localStorage.star);
-        
+
+
+        var rated = Number(localStorage.marychungstar);
+
 
         var fakeClick = "#" + ratings2[rated-1];
         $(fakeClick).click();
-        
+
         for (rating = 0; rating<=4; rating++) {
             var star = "#" + ratings[rating];
             if (rating <= rated -1) {
@@ -78,12 +78,12 @@ $(document).ready(function () {
                 $(star).addClass("fa fa-star-o");
             }
 
-        }  
+        }
 
         $("#usernewreview").show('fast');
             $("#submitreview").text("Update review");
     }
-    
+
 
     //Update user new review into List of reviews
     //ALSO update localStorage
@@ -91,13 +91,13 @@ $(document).ready(function () {
         $("#numreview").text('by 7 reviewers');
         var userreview = $("#textreview").val();
         $("#newreview").text(userreview);
-        
-        //localStorage to save review
-        localStorage.review = userreview;
-        localStorage.hadreview = "true";
-        localStorage.star = num_stars;
 
-        
+        //localStorage to save review
+        localStorage.marychungreview = userreview;
+        localStorage.marychunghadreview = "true";
+        localStorage.marychungstar = num_stars;
+
+
         var ratings = ["1s", "2s", "3s", "4s", "5s"];
         for (rating = 0; rating<=4; rating++) {
             star = "#" + ratings[rating];
@@ -109,7 +109,7 @@ $(document).ready(function () {
                 $(star).addClass("fa fa-star-o");
             }
 
-        }  
+        }
 
         $("#usernewreview").show('fast');
             $("#submitreview").text("Update review");

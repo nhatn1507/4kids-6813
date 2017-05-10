@@ -36,6 +36,76 @@
     <script src="../../js/review.js"></script>
     <!-- MAIN CSS  FILE-->
     <link rel="stylesheet" href="../../css/review.css">
+    <script>
+    $(document).ready(function () {
+      //LOCALSTORAGE exist - restore review
+      if (localStorage.beantownhadreview === "true") {
+          $("#numreview").text('by 8 reviewers');
+
+          $("#textreview").val(localStorage.beantownreview);
+
+          var userreview = $("#textreview").val();
+          $("#newreview").text(userreview);
+
+          var ratings = ["1s", "2s", "3s", "4s", "5s"];
+          var ratings2 = ["onestar", "twostar", "threestar", "fourstar", "fivestar"];
+
+
+          var rated = Number(localStorage.beantownstar);
+
+
+          var fakeClick = "#" + ratings2[rated-1];
+          $(fakeClick).click();
+
+          for (rating = 0; rating<=4; rating++) {
+              var star = "#" + ratings[rating];
+              if (rating <= rated -1) {
+                  $(star).removeClass("fa fa-star-o");
+                  $(star).addClass("fa fa-star");
+              } else {
+                  $(star).removeClass("fa fa-star");
+                  $(star).addClass("fa fa-star-o");
+              }
+
+          }
+
+          $("#usernewreview").show('fast');
+              $("#submitreview").text("Update review");
+      }
+
+
+      //Update user new review into List of reviews
+      //ALSO update localStorage
+      $("#submitreview").click(function() {
+          $("#numreview").text('by 8 reviewers');
+          var userreview = $("#textreview").val();
+          $("#newreview").text(userreview);
+
+          //localStorage to save review
+
+          localStorage.beantownreview = userreview;
+          localStorage.beantownhadreview = "true";
+          localStorage.beantownstar = num_stars;
+
+          var ratings = ["1s", "2s", "3s", "4s", "5s"];
+          for (rating = 0; rating<=4; rating++) {
+              star = "#" + ratings[rating];
+              if (rating <= num_stars -1) {
+                  $(star).removeClass("fa fa-star-o");
+                  $(star).addClass("fa fa-star");
+              } else {
+                  $(star).removeClass("fa fa-star");
+                  $(star).addClass("fa fa-star-o");
+              }
+
+          }
+
+          $("#usernewreview").show('fast');
+              $("#submitreview").text("Update review");
+
+      });
+    })
+    </script>
 </head>
 
 <body>
