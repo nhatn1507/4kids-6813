@@ -76,6 +76,7 @@ function signup() {
 
   username = document.getElementById("email2").value;
   password = document.getElementById("pass2").value;
+  confirm_password  = document.getElementById("pass3").value;
   first_name = document.getElementById("first").value;
   last_name = document.getElementById("last").value;
   zip_code = document.getElementById("zip").value;
@@ -89,23 +90,35 @@ function signup() {
 
     }
     else{
-      email_password_dict[username] = password
-      email_meta_info_dict[username] = {"first_name":first_name, "last_name":last_name, "zip_code":zip_code}
-      localStorage.setItem("email_password_dict", JSON.stringify(email_password_dict));
-      localStorage.setItem("email_meta_info_dict", JSON.stringify(email_meta_info_dict));
-
-
-
-        $("#toppart").text("Awesome!");
-        $("#newaccountcreated").text("Successfully created an account for " + username + ". Welcome to VegEatable!");
+      if (password != confirm_password){
+        $("#toppart").text("Error");
+        $("#newaccountcreated").text("Passwords does not match");
         $("#hideaway").click();
+        document.getElementById("pass2").value = "";
+        document.getElementById("pass3").value = "";
+      }
+      else{
+        email_password_dict[username] = password
+        email_meta_info_dict[username] = {"first_name":first_name, "last_name":last_name, "zip_code":zip_code}
+        localStorage.setItem("email_password_dict", JSON.stringify(email_password_dict));
+        localStorage.setItem("email_meta_info_dict", JSON.stringify(email_meta_info_dict));
 
 
-      document.getElementById("email2").value = "";
-      document.getElementById("pass2").value = "";
-      document.getElementById("first").value = "";
-      document.getElementById("last").value = "";
-      document.getElementById("zip").value = "";
+
+          $("#toppart").text("Awesome!");
+          $("#newaccountcreated").text("Successfully created an account for " + username + ". Welcome to VegEatable!");
+          $("#hideaway").click();
+
+
+        document.getElementById("email2").value = "";
+        document.getElementById("pass2").value = "";
+        document.getElementById("pass3").value = "";
+        document.getElementById("first").value = "";
+        document.getElementById("last").value = "";
+        document.getElementById("zip").value = "";
+
+      }
+
 
     }
   }
@@ -183,6 +196,7 @@ function password_forgot(){
                 <div class='userinput'> <input type="email" class="form-control" placeholder="Email" id="email2" required> </div>
 
                 <div class='userinput'> <input type="password" class="form-control" placeholder="Password" id="pass2" required> </div>
+                <div class='userinput'> <input type="password" class="form-control" placeholder="Confirm Password" id="pass3" required> </div>
 
 
                 <div class="userinput"> <input type="text" class="form-control" placeholder="Zip Code" id="zip" required> </div>
