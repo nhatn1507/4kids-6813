@@ -44,7 +44,7 @@ if (typeof(Storage) !== "undefined") {
     // Retrieve
     email_password_dict = JSON.parse(localStorage.getItem("email_password_dict"));
     if (email_password_dict == null){email_password_dict = {}};
-    email_meta_info_dict = JSON.parse(localStorage.getItem("email_password_dict"));
+    email_meta_info_dict = JSON.parse(localStorage.getItem("email_meta_info_dict"));
     if (email_meta_info_dict == null){email_meta_info_dict = {}};
 
 
@@ -85,22 +85,22 @@ function signup() {
         $("#toppart").text("Unfortunately!");
         $("#newaccountcreated").text("There's already an account associated with " + username);
         $("#hideaway").click();
-        
-        
+
+
     }
     else{
       email_password_dict[username] = password
       email_meta_info_dict[username] = {"first_name":first_name, "last_name":last_name, "zip_code":zip_code}
       localStorage.setItem("email_password_dict", JSON.stringify(email_password_dict));
       localStorage.setItem("email_meta_info_dict", JSON.stringify(email_meta_info_dict));
-      
-        
-        
+
+
+
         $("#toppart").text("Awesome!");
         $("#newaccountcreated").text("Successfully created an account for " + username + ". Welcome to VegEatable!");
         $("#hideaway").click();
-        
-        
+
+
       document.getElementById("email2").value = "";
       document.getElementById("pass2").value = "";
       document.getElementById("first").value = "";

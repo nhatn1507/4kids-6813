@@ -35,45 +35,116 @@
 <body>
 
     <div id="container">
-        
+
         <style>
         #hovertitle:hover { text-decoration: none; }
         </style>
         <a href='home.html' id='hovertitle'> <div id="header" >    VegEatable</div></a>
-            
-            
+
+
         <a id="login" href="Login.html"> <b> Log In/Sign Up</b></a>
         </div>
+        <div id = "profile" style="Margin-left:10px; font-size:30px;"><b> Profile Information </b></div>
+        <label for="first_input" style = "Margin-left:10px;">First Name</label>
+        <div id = "first_input" style="Margin-left:10px; max-width: 300px;"> <input type="text" class="form-control" placeholder="Mark, etc." id="first_name"> </div>
+        <label for="second_input" style = "Margin-left:10px;">Last Name</label>
+        <div id = "second_input" style="Margin-left:10px; max-width: 300px;"> <input type="text" class="form-control" placeholder="Wang, etc." id="second_name"> </div><br>
+        <div id = "change_names_button" style="Margin-left:10px; width: 60%; max-width: 200px; "> <button type="submit" class="btn btn-block" style="background-color: #66ffa5; clear: both;" onclick="changeNames()"><b>Change Name </b> </button> </div><br>
+        <div id = "Password" style="Margin-left:10px; font-size:30px;"><b> Change Password </b></div>
+        <div style="Margin:10px; max-width: 300px;"> <input type="password" class="form-control" placeholder="Old Password" id="old_password"> </div>
+        <div style="Margin:10px; max-width: 300px;"> <input type="password" class="form-control" placeholder="New Password" id="new_password1"> </div>
+        <div style="Margin:10px; max-width: 300px;"> <input type="password" class="form-control" placeholder="New Password" id="new_password2"> </div>
+        <div id = "password_button" style="Margin:10px; width: 60%; max-width: 200px; "> <button type="submit" class="btn btn-block" style="background-color: #66ffa5; clear: both;" onclick="changePassword()"><b>Change Password </b> </button> </div><br>
+        <label for="signout" style = "Margin-left:10px; font-size: 30px">Signout</label>
+        <div id = "signout" style="Margin-left:10px; width: 60%; max-width: 200px; "> <button type="submit" class="btn btn-block" style="background-color: #66ffa5; clear: both;" onclick="signout()"><b>Signout </b> </button> </div><br>
+      </div>
 
-        <h1 id = "profile"> Your Profile </h1>
-        
-        <div id="main">
-        <div id="maininner">
-        <div class='in' id = "profile_pic"> Your Profile Photo <a href="#" style=" margin: 5px 0; color:blue;" onclick = "password_forgot()"> <strong> <u>(Add/Edit) </u> </strong> </a></div>
-        <div class='in' id = "picture"> ACTUAL PICTURE (REPLACE LATER) </div>
-        <div class='in' id = "first_name">User Name</div>
-        <label class='in' for="first_input">First Name</label>
-        <div class='in' id = "first_input" style=" max-width: 300px;"> <input type="password" class="form-control" placeholder="Mark, etc." id="pass"> </div>
-        <label class='in' for="second_input">Last Name</label>
-        <div class='in' id = "second_input" style=" max-width: 300px;"> <input type="password" class="form-control" placeholder="Wang, etc." id="pass"> </div>
-        <label class='in' for="nickname_input">Nickname</label>
-        <div class='in' id = "nickname_input" style=" max-width: 300px;"> <input type="password" class="form-control" placeholder="Wangler, etc." id="pass"> </div>
-        <label class='in' for="password_input">New Password</label>
-        <div class='in' id = "password_input" style="width: 60%; max-width: 200px; "> <button type="submit" class="btn btn-block" style="background-color: #66ffa5; clear: both;" onclick="login()"><b>Change Password </b> </button> </div>
-</div>
-         </div>
-    </div>
+
+
 
 
 </body>
 <script>
 item = sessionStorage.getItem("current_username");
-if (item != null){
-  console.log(item);
+if (item != null && item.length > 0){
   var login = document.getElementById("login");
-  console.log(login);
   login.href = "profile.html"
   login.innerHTML = "Welcome " + item.toString()
+}
+
+function changeNames(){
+  first_name = document.getElementById("first_name").value;
+  second_name = document.getElementById("second_name").value;
+  email_meta_info_dict = JSON.parse(localStorage.getItem("email_password_dict"));
+  current_dict = email_meta_info_dict[item.toString()]
+  if (first_name.length > 0 && second_name.length > 0){
+    current_dict["first_name"] = first_name
+    current_dict["last_name"] = second_name
+    localStorage.setItem("email_meta_info_dict", JSON.stringify(email_meta_info_dict));
+    window.alert("Changed first and last name")
+    document.getElementById("first_name").value = ""
+    document.getElementById("second_name").value = ""
+  }
+  else if (first_name.length > 0) {
+    current_dict["first_name"] = first_name
+    localStorage.setItem("email_meta_info_dict", JSON.stringify(email_meta_info_dict));
+    window.alert("Changed first name")
+    document.getElementById("first_name").value = ""
+    document.getElementById("second_name").value = ""
+  }
+  else if (second_name.length > 0){
+    current_dict["last_name"] = second_name
+    localStorage.setItem("email_meta_info_dict", JSON.stringify(email_meta_info_dict));
+    window.alert("Changed last name")
+    document.getElementById("first_name").value = ""
+    document.getElementById("second_name").value = ""
+  }
+  else{
+    window.alert("Please fill out either new first name or new last name")
+  }
+}
+
+function changePassword(){
+  email_password_dict = JSON.parse(localStorage.getItem("email_password_dict"));
+  old_pass = document.getElementById("old_password").value;
+  new_pass1 = document.getElementById("new_password1").value;
+  new_pass2 = document.getElementById("new_password2").value;
+  if (old_pass == "" || new_pass1 == "" || new_pass2 == ""){
+    window.alert("Please fill out all fields")
+  }
+  else if (email_password_dict[item.toString()] == old_pass){
+    if (new_pass1 == new_pass2){
+      email_password_dict[item.toString()] = new_pass1;
+      localStorage.setItem("email_password_dict", JSON.stringify(email_password_dict));
+      window.alert("Changed passwords");
+      document.getElementById("old_password").value = ""
+      document.getElementById("new_password1").value = ""
+      document.getElementById("new_password2").value = ""
+
+    }
+    else{
+      window.alert("New Passwords do not match")
+      document.getElementById("old_password").value = ""
+      document.getElementById("new_password1").value = ""
+      document.getElementById("new_password2").value = ""
+    }
+  }
+  else{
+    window.alert("Wrong inputted old password")
+    document.getElementById("old_password").value = ""
+    document.getElementById("new_password1").value = ""
+    document.getElementById("new_password2").value = ""
+  }
+
+}
+
+function signout(){
+  sessionStorage.setItem("current_username", "");
+  window.location = "home.html"
+}
+
+function addEdit(){
+
 }
 </script>
 </html>

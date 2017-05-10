@@ -176,7 +176,7 @@
 
 <script>
 item = sessionStorage.getItem("current_username");
-if (item != null){
+if (item != null && item.length > 0){
   console.log(item);
   var login = document.getElementById("login");
   console.log(login);
