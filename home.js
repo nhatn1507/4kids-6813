@@ -50,12 +50,12 @@ $(document).ready(function() {
       if (openWindow != null) {
             openWindow.close();
         }
-      RESTAURANTS_ID.forEach(function(id) { $(id).hide(); })
+      RESTAURANTS_ID.forEach(function(id) { $(id).hide('fast'); })
       var query = $("#searchtext").val().toLowerCase();
       for (rest in RESTAURANTS_SET) {
           if (RESTAURANTS_SET[rest].has(query)) {
               var buttonToShow = RESTAURANTS_ID[parseInt(rest)];
-              $(buttonToShow).show();
+              $(buttonToShow).show('medium');
           }
       }
 

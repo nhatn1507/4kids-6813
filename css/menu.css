@@ -42,8 +42,8 @@ ul {
 
 li a {
     float: right;
-    cursor:text;
-    background-color: #333;
+    cursor: pointer;
+    background-color: 	#404040;
     display: block;
     color: white;
     text-align: center;
@@ -122,6 +122,7 @@ div.title {
     color: black; /* Add a black text color */
     display: block; /* Make it into a block element to fill the whole list */
     align-items: left;
+    
 }
 
 #myUL li a.header {
