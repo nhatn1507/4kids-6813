@@ -39,11 +39,9 @@ ul {
 
 }
 
-li {
-    float: right;
-}
 
 li a {
+    float: right;
     cursor:text;
     background-color: #333;
     display: block;
@@ -53,14 +51,14 @@ li a {
     text-decoration: none;
 }
 
-/*li a:hover, a:visited, a:link, a:active {
+li a:hover, a:visited, a:link, a:active {
     text-decoration: none;
     color: white;
 }
 li a:hover:not(.active) {
     background-color: #111;
     color: white;
-}*/
+}
 
 /* Set default styles for tab content */
 .menucontent {
@@ -114,7 +112,7 @@ div.title {
     padding-left: 0pt;
 }
 
-#myUL li a {
+#myUL a {
     border: 1px solid #ddd; /* Add a border to all links */
     margin-top: -1px; /* Prevent double borders */
     background-color: #f6f6f6; /* Grey background color */
@@ -131,6 +129,6 @@ div.title {
     cursor: default; /* Change cursor style */
 }
 
-#myUL li a:hover:not(.header) {
+#myUL a:hover:not(.header) {
     background-color: #eee; /* Add a hover effect to all links, except for headers */
 }
