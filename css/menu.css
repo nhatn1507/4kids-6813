@@ -20,7 +20,7 @@ font-family: 'Nobile', sans-serif;
 #header {
     text-align: center ;
     font-family: 'EB Garamond', serif;
-    background-color: #140078;
+    background-color: #512da8;
     color: white;
     font-size: 40px;
     letter-spacing: 0.3em;
@@ -39,11 +39,9 @@ ul {
 
 }
 
-li {
-    float: right;
-}
 
 li a {
+    float: right;
     cursor:text;
     background-color: #333;
     display: block;
@@ -53,14 +51,14 @@ li a {
     text-decoration: none;
 }
 
-/*li a:hover, a:visited, a:link, a:active {
+li a:hover, a:visited, a:link, a:active {
     text-decoration: none;
     color: white;
 }
 li a:hover:not(.active) {
     background-color: #111;
     color: white;
-}*/
+}
 
 /* Set default styles for tab content */
 .menucontent {
@@ -114,7 +112,7 @@ div.title {
     padding-left: 0pt;
 }
 
-#myUL li a {
+#myUL a {
     border: 1px solid #ddd; /* Add a border to all links */
     margin-top: -1px; /* Prevent double borders */
     background-color: #f6f6f6; /* Grey background color */
@@ -131,6 +129,26 @@ div.title {
     cursor: default; /* Change cursor style */
 }
 
-#myUL li a:hover:not(.header) {
+#myUL a:hover:not(.header) {
     background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+#login {
+    font-family: : 'Nobile', sans-serif;
+    position: absolute;
+    right: 6%;
+    top: 1.5vh;
+    letter-spacing: normal;
+    font-size: 14px;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 7px;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+}
+#login:hover,#login:active {
+    background-color: #66ffa6;
+    color: black;
 }
