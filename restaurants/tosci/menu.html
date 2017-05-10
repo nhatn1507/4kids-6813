@@ -35,7 +35,7 @@
 
 
     <!-- MAIN CSS  FILE-->
-    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="../../css/menu.css">
 
     <!-- MAIN JS FILE-->
     <script src="menu.js"></script>
@@ -47,7 +47,10 @@
 
 
 
-        <div id="header"> VegEatable </div>
+    <style>
+    #hovertitle:hover { text-decoration: none; }
+    </style>
+        <a href='../../home.html' id='hovertitle'> <div id="header"  style="background-color: #512da8;">    VegEatable</div></a>
 
 
 
@@ -68,14 +71,14 @@
                     <div id="Menu" class="tabcontent">
 
                         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Menu search">
-                        <ul id="myUL">
-                            <li><a class="menulink" onclick="openMenu('padthai', this, '#F0F8FF')">Green Tea ice cream $4.50</a></li>
-                            <li><a class="menulink" onclick="openMenu('potatopuffs', this, '#F0F8FF')">Vanilla ice cream $5.95</a></li>
-                            <li><a class="menulink" onclick="openMenu('coffee', this, '#F0F8FF')">Coffee ice cream $4.50</a></li>
-                            <li><a class="menulink" onclick="openMenu('strawberry', this, '#F0F8FF')">Strawberry ice cream $5.00</a></li>
-                            <li><a class="padthai.html" onclick="openMenu('mango', this, '#F0F8FF')">Mango ice cream $4.50</a></li>
+                        <div id="myUL">
+                            <a class="menulink" onclick="openMenu('padthai', this, '#F0F8FF')">Green Tea ice cream $4.50</a></li>
+                            <a class="menulink" onclick="openMenu('potatopuffs', this, '#F0F8FF')">Vanilla ice cream $5.95</a></li>
+                            <a class="menulink" onclick="openMenu('coffee', this, '#F0F8FF')">Coffee ice cream $4.50</a></li>
+                            <a class="menulink" onclick="openMenu('strawberry', this, '#F0F8FF')">Strawberry ice cream $5.00</a></li>
+                            <a class="padthai.html" onclick="openMenu('mango', this, '#F0F8FF')">Mango ice cream $4.50</a></li>
 
-                        </ul>
+                        </div>
 
                     </div>
                 </div>
