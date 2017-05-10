@@ -94,5 +94,15 @@
         </div>
 
     </div>
+    <script>
+    item = sessionStorage.getItem("current_username");
+    if (item != null && item.length > 0){
+      console.log(item);
+      var login = document.getElementById("login");
+      console.log(login);
+      login.href = "profile.html"
+      login.innerHTML = "Welcome " + item.toString()
+    }
+    </script>
 
 </body>
