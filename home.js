@@ -1,22 +1,63 @@
+//GLOBAL VARIABLES
+var pepperSkyMarker, beanTownMarker, veggieGalaxyMarker, maryChungMarker, toscaniniMarker, openWindow;
+
+var setToscanini = new Set("899 Main St, Cambridge, MA 02139 Toscanini Ice Cream Longtime favorite for espresso & gourmet ice cream in a range of unique flavors that changes often Green Tea ice cream green tea powder sugar  water milk Vanilla ice cream vanilla extract heavy whipping cream, milk, sugar, water Coffee ice cream  coffee, milk, sugar, water Strawberry ice cream strawbarry milk sugar water Mango ice cream mango milk sugar water ".toLowerCase().replace(/[^\w\s]/gi, '').split(' '));
+var setPepper = new Set("555 Massachusetts Avenue, Cambridge, MA 02139 We serve great Thai food! Our specialty is pad thai, so please come and try out our noodles Pad Thai Noodles, Garlic, Eggs, Coffee, Soy Sauce, Lime Juice, Sugar, Fish Sauce, Green Onions, Cilantro, Pepper Flakes Potato Puffs Potatoes, Egg, Butter, Milk, Cheese, Nutmeg Spring Rolls Noodles, Green Onions, Garlic, Cabbage, Soy Sauce, Pepper, Carrot Scallion Pancake Flour, Salt, Green Onions Fresh Rolls Flour, Yeast, Sugar, Milk, Butter".toLowerCase().replace(/[^\w\s]/gi, '').split(' '));
+var setMary = new Set("464 Massachusetts Ave, Cambridge, MA 02139 Mary Chung Humble, old-school cash-only Chinese mainstay specializing in spicy Sichuan plates Egg Drop - eggs, tomatoes, water, salt, pepper Savory tomatoes with eggs - tomatoes, eggs, salt, soy sauce, green onions Stir fried tofu - vegetable oil, tofu, onion, garlic, spinach, pepper, noodle, carrot Veggie Dumplings - spinach, flour, tofu, oil, salt, pepper, sugar Veggie Buns - spinach, flour, tofu, oil, salt, pepper, sugar".toLowerCase().replace(/[^\w\s]/gi, '').split(' '));
+var setBean = new Set(" 245 Massachusetts Avenue, Cambridge, MA 02139 Beantown Taqueria American breakfasts plus Mexican & Tex-Mex dishes plated in local, low-key cafe with colorful decor Veggie Burrito - tortillas, onion, cumin, chili powder, red bell, carrot, black beans, salsa, cheese, sour cream, cilantro Veggie Chimi Changa - tortillas, onion, cumin, chili powder, red bell, carrot, black beans, salsa, cheese, sour cream, cilantro, deep fried Veggie Taco - taco shell, sour cream, cheese, salsa, black beans Veggie Omelet - Tomato, Onion, Bell Pepper. Served with home fries and toast Mexico Omelet - Onion, Tomato, Serrano Pepper. Served with home fries and toast".toLowerCase().replace(/[^\w\s]/gi, '').split(' '));
+var setVeggie = new Set(" 450 Massachusetts Avenue, Cambridge, MA 02139 Veggie Galaxy Imaginative twist on an old-school diner specializing in from-scratch vegan & vegetarian options Great Galaxy - Hash Brown Potatoes, Over Easy Egg, Tempeh Bacon, Cheddar Cheese, Baby Arugula, Roasted Garlic Mayo, on a Griddled Bun Stuffed - Vanilla Vegan Cream Cheese, topped with Caramelized Banana Butter, Strawberry Sauce & Maple Syrup  Traditional - Farmer's Table bread with Caramelized Banana Butter & Maple Syrup The Club - Grilled Tempeh Bacon, Smoked Tofu, Fresh Tomato, Romaine, Raw Red Onion, Basil Pesto & Roasted Garlic Mayo Reuben - Grilled Shaved Corned-Beef Seitan, Green Cabbage ‘Kraut, Swiss Cheese, House-made Thousand Island Dressing Rachel - Grilled Shaved Corned-Beef Seitan, Green Cabbage Slaw, Swiss Cheese, House-made Thousand Island Dressing".toLowerCase().replace(/[^\w\s]/gi, '').split(' '));
+
+
+
+
+
+
 $(document).ready(function() {
-  $("#searchselect").change(function () {
-    $("#searchtext").val('');
-    if ($("#searchselect").val().includes("R")) {
-      document.getElementById('searchtext').placeholder='Search Restaurant';
-    };
-    if ($("#searchselect").val().includes("F")) {
-      document.getElementById('searchtext').placeholder='Search Food';
-    };
-    if ($("#searchselect").val().includes("I")) {
-      document.getElementById('searchtext').placeholder='Search Ingredient';
-    };
-  });
-
-  $("#searchsubmit").click(function() {
-
-    google.maps.event.trigger(pepperSkyMarker, 'click', {
-      latLng: new google.maps.LatLng(0, 0)
+    
+    initMap();
+     
+      RESTAURANTS_SET = {0: setPepper, 
+                   1: setBean, 
+                   2: setVeggie, 
+                   3: setMary, 
+                   4: setToscanini }
+    RESTAURANTS_MARKER = [pepperSkyMarker, beanTownMarker, veggieGalaxyMarker, maryChungMarker, toscaniniMarker];
+    RESTAURANTS_ID = ["#pepper", "#bean", "#veggie", "#mary", "#tos"]
+    
+    
+    //CAN ALSO PRESS ENTER TO SUBMIT 
+     $("#searchtext").keyup(function(e) {
+        if  (e.key == 'Enter') {
+            $("#searchsubmit").click();
+        }
+     });
+    
+    
+    //CLICK on one of the list result buttons
+    $(".list-group-item").click(function(e) {
+       var idClicked = "#" + $(this).attr('id'); 
+       var indexClicked = RESTAURANTS_ID.indexOf(idClicked);
+ 
+        var markerToClick = RESTAURANTS_MARKER[indexClicked];
+     google.maps.event.trigger(markerToClick, 'click', {
+                    latLng: new google.maps.LatLng(0, 0)});
     });
+    
+    
+    
+ // CLICK SUBMIT BUTTON - show search result
+  $("#searchsubmit").click(function() {
+      if (openWindow != null) {
+            openWindow.close();
+        }
+      RESTAURANTS_ID.forEach(function(id) { $(id).hide(); })
+      var query = $("#searchtext").val().toLowerCase();
+      for (rest in RESTAURANTS_SET) {
+          if (RESTAURANTS_SET[rest].has(query)) {
+              var buttonToShow = RESTAURANTS_ID[parseInt(rest)];
+              $(buttonToShow).show();
+          }
+      }
 
   });
 
@@ -39,8 +80,7 @@ function CenterControl(controlDiv, map) {
   controlUI.title = 'Click to recenter the map';
   controlDiv.appendChild(controlUI);
 
-  //TODO: remove this TEMPORARILTY MAKE THIS GLOBAL FOR ACCESS IN HOME.JS
-  var pepperSkyMarker;
+
 
   // Set CSS for the control interior.
   var controlText = document.createElement('div');
@@ -153,31 +193,31 @@ function initMap() {
     content: yourLocationContent
   });
 
-  pepperSkyMarker = new google.maps.Marker({
+   pepperSkyMarker = new google.maps.Marker({
     position: peppersky,
     map: map,
     title: 'Pepper Sky'
   });
 
-  var beanTownMarker = new google.maps.Marker({
+   beanTownMarker = new google.maps.Marker({
     position: beantown,
     map: map,
     title: 'Beantown'
   });
 
-  var veggieGalaxyMarker = new google.maps.Marker({
+   veggieGalaxyMarker = new google.maps.Marker({
     position: veggiegalaxy,
     map: map,
     title: 'Veggie Galaxy'
   });
 
-  var maryChungMarker = new google.maps.Marker({
+   maryChungMarker = new google.maps.Marker({
     position: marychung,
     map: map,
     title: 'Mary Chung'
   });
 
-  var toscaniniMarker = new google.maps.Marker({
+   toscaniniMarker = new google.maps.Marker({
     position: toscanini,
     map: map,
     title: "Toscanini's"
@@ -197,7 +237,7 @@ function initMap() {
     icon: image
   });
 
-  var openWindow;
+  
 
   pepperSkyMarker.addListener('click', function() {
     if (openWindow != null){
