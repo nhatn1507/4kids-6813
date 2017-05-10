@@ -82,14 +82,25 @@ function signup() {
 
   if (username.length > 0 && password.length > 0 && first_name.length > 0 && last_name.length > 0 && zip_code.length > 0){
     if (username in email_password_dict){
-      window.alert("There's already an account associated with " + username);
+        $("#toppart").text("Unfortunately!");
+        $("#newaccountcreated").text("There's already an account associated with " + username);
+        $("#hideaway").click();
+        
+        
     }
     else{
       email_password_dict[username] = password
       email_meta_info_dict[username] = {"first_name":first_name, "last_name":last_name, "zip_code":zip_code}
       localStorage.setItem("email_password_dict", JSON.stringify(email_password_dict));
       localStorage.setItem("email_meta_info_dict", JSON.stringify(email_meta_info_dict));
-      window.alert("Successfully created an account for " + username);
+      
+        
+        
+        $("#toppart").text("Awesome!");
+        $("#newaccountcreated").text("Successfully created an account for " + username + ". Welcome to VegEatable!");
+        $("#hideaway").click();
+        
+        
       document.getElementById("email2").value = "";
       document.getElementById("pass2").value = "";
       document.getElementById("first").value = "";
@@ -182,8 +193,31 @@ function password_forgot(){
             </div>
         </div>
 
+          <!-- Modal -->
+        <button id="hideaway" data-toggle="modal" data-target="#myModal" style="display: none;"> </button>
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-md">
 
+              <!-- Modal content-->
+              <div class="modal-content">
 
+                <div style="padding: 10px; border-bottom: 1px solid #D3D3D3;">
+
+                  <h4 id="toppart" class="modal-title" style='float:left;'>Awesome!</h4>
+
+                  <button type="button" class="close" data-dismiss="modal" >&times;</button>
+                </div>
+
+                <div class="modal-body">
+                  <p id='newaccountcreated'> </p>
+                </div>
+                <div class="modal-footer" style="padding: 10px;">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
 
     </div>
 
