@@ -44,8 +44,8 @@ li {
 }
 
 li a {
-    cursor:text;
-    background-color: #333;
+    cursor: pointer;
+    background-color: #404040;
     display: block;
     color: white;
     text-align: center;
