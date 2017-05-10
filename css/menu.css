@@ -20,7 +20,7 @@ font-family: 'Nobile', sans-serif;
 #header {
     text-align: center ;
     font-family: 'EB Garamond', serif;
-    background-color: #140078;
+    background-color: #512da8;
     color: white;
     font-size: 40px;
     letter-spacing: 0.3em;
@@ -131,4 +131,24 @@ div.title {
 
 #myUL a:hover:not(.header) {
     background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+#login {
+    font-family: : 'Nobile', sans-serif;
+    position: absolute;
+    right: 6%;
+    top: 1.5vh;
+    letter-spacing: normal;
+    font-size: 14px;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 7px;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+}
+#login:hover,#login:active {
+    background-color: #66ffa6;
+    color: black;
 }

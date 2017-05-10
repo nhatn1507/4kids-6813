@@ -20,7 +20,7 @@ font-family: 'Nobile', sans-serif;
 #header {
     text-align: center ;
     font-family: 'EB Garamond', serif;
-    background-color: #140078;
+    background-color: #512da8;
     color: white;
     font-size: 40px;
     letter-spacing: 0.3em;
@@ -36,7 +36,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-     
+
 }
 
 li {
@@ -64,7 +64,7 @@ li a:hover:not(.active) {
 
 .active {
     background-color: white;
-    
+
 }
 
 
@@ -97,4 +97,24 @@ div.title {
 
 #StarsPepperSky {
     margin-top: 30px;
+}
+
+#login {
+    font-family: : 'Nobile', sans-serif;
+    position: absolute;
+    right: 6%;
+    top: 1.5vh;
+    letter-spacing: normal;
+    font-size: 14px;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 7px;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+}
+#login:hover,#login:active {
+    background-color: #66ffa6;
+    color: black;
 }
