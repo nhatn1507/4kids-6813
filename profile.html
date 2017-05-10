@@ -35,10 +35,16 @@
 <body>
 
     <div id="container">
-        <div id="header" style=" cursor: pointer;">
+
+        <style>
+        #hovertitle:hover { text-decoration: none; }
+        </style>
         <a href='home.html' id='hovertitle'> <div id="header" >    VegEatable</div></a>
+
+
         <a id="login" href="Login.html"> <b> Log In/Sign Up</b></a>
         </div>
+
 
         <div id = "profile" style="Margin-left:10px; font-size:30px;"><b> Profile Information </b></div>
         <label for="first_input" style = "Margin-left:10px;">First Name</label>
@@ -53,9 +59,10 @@
         <div id = "password_button" style="Margin:10px; width: 60%; max-width: 200px; "> <button type="submit" class="btn btn-block" style="background-color: #66ffa5; clear: both;" onclick="changePassword()"><b>Change Password </b> </button> </div><br>
         <label for="signout" style = "Margin-left:10px; font-size: 30px">Signout</label>
         <div id = "signout" style="Margin-left:10px; width: 60%; max-width: 200px; "> <button type="submit" class="btn btn-block" style="background-color: #66ffa5; clear: both;" onclick="signout()"><b>Signout </b> </button> </div><br>
+      </div>
 
 
-    </div>
+
 
 
 </body>
@@ -72,7 +79,7 @@ function changeNames(){
   second_name = document.getElementById("second_name").value;
   email_meta_info_dict = JSON.parse(localStorage.getItem("email_password_dict"));
   current_dict = email_meta_info_dict[item.toString()]
-  if (first_name != null && second_name != null){
+  if (first_name.length > 0 && second_name.length > 0){
     current_dict["first_name"] = first_name
     current_dict["last_name"] = second_name
     localStorage.setItem("email_meta_info_dict", JSON.stringify(email_meta_info_dict));
@@ -80,14 +87,14 @@ function changeNames(){
     document.getElementById("first_name").value = ""
     document.getElementById("second_name").value = ""
   }
-  else if (first_name != null) {
+  else if (first_name.length > 0) {
     current_dict["first_name"] = first_name
     localStorage.setItem("email_meta_info_dict", JSON.stringify(email_meta_info_dict));
     window.alert("Changed first name")
     document.getElementById("first_name").value = ""
     document.getElementById("second_name").value = ""
   }
-  else if (second_name != null){
+  else if (second_name.length > 0){
     current_dict["last_name"] = second_name
     localStorage.setItem("email_meta_info_dict", JSON.stringify(email_meta_info_dict));
     window.alert("Changed last name")

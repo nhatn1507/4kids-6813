@@ -20,9 +20,12 @@
     font-size: 40px;
     letter-spacing: 0.3em;
     padding: auto 0;
-    height: 10vh;
+    height: 70px;
     position: relative;
 }
+
+
+
 
 #login {
     font-family: : 'Nobile', sans-serif;
@@ -39,12 +42,29 @@
     outline: none;
     text-decoration: none;
 }
+
 #login:hover,#login:active {
     background-color: #66ffa6;
     color: black;
 }
 
 
+
+#profile {
+   text-align: center; 
+}
+#main {
+    width: 30%;
+    max-width: 350px;
+    margin: 3% auto;
+}
+#maininner {
+    margin: 10% auto;
+}
+
+.in {
+    padding: 7px 5px 5px 3px;
+}
 
 select{
   font-family: FontAwesome,Material Icons, Ionicons,  sans-serif;

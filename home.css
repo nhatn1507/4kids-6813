@@ -20,7 +20,7 @@
     font-size: 40px;
     letter-spacing: 0.3em;
     padding: auto 0;
-    height: 10vh;
+    height: 70px;
     position: relative;
 }
 
@@ -39,6 +39,10 @@
     outline: none;
     text-decoration: none;
 }
+
+
+
+
 #login:hover,#login:active {
     background-color: #66ffa6;
     color: black;
@@ -58,7 +62,9 @@
 }
 
 #innerleft {
-    margin: 30% auto;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
     font-family: : 'Nobile', sans-serif;
 }
 
@@ -68,20 +74,20 @@
     margin: 0 auto;
 
 }
-#searchoption {
-    margin-bottom: 4px;
-}
+
 #seachbox {
     border: 2px solid #66ffa6;
 }
 
-#searchselect {
-    overflow: visible;
-    border: 2px solid #fff;
-    border-radius: 7px;
-    outline: none;
-}
+
 
 select{
   font-family: FontAwesome,Material Icons, Ionicons,  sans-serif;
 }
+
+
+
+.list-group-item {
+    display: none;
+}
+
